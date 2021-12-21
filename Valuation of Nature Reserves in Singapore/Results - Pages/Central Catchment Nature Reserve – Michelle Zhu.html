@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://www.michellezhu.co/ccnr/ -->
+<html lang="en-US"><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;"><script type="text/javascript" id="__tmpScript-375266039" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-926270481" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-661957638" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-16755968" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-231087039" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-218108062" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-214182523" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-293972407" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-744299025" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-994813328" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-285213593" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-400331118" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-665543141" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-73488696" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-832803300" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-799714808" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-860442134" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-222569722" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-791429373" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-716896926" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-86894085" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-58872661" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-378562983" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-201881451" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-680683849" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-270764928" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-856269262" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-926572257" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-535275071" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-270335689" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-858793865" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-389477013" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-978171379" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-285749532" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-324362501" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-967579833" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-984644573" data-added-by-two-seven="1">(function() {
+        
+      const modal = document.querySelector('.twoseven-ext-tab-media-modal')
+      const modalCloseBtn = modal.querySelector('.close')
+      function closeModal () {
+        modal.style.display = 'none'
+        const frame = document.querySelector('#twoseven-ext-tab-media-iframe').contentWindow
+        frame.postMessage({
+          __evt_name: 'modal-hide'
+        }, '*')
+      }
+      modalCloseBtn.onclick = closeModal
+
+      window.onmessage = function (e) {
+        if (e.data.__evt_name === 'modal-hide') {
+          closeModal()
+        }
+      }
+
+      window.twoseven.closeTabMediaModal = closeModal
+
+      window.onclick = function (e) {
+        if (e.target.id === 'twoseven-ext-tab-media-modal' && modal.style.display === 'block') {
+            closeModal()
+        }
+      }
+    ;
+      })();</script></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<title>Central Catchment Nature Reserve – Michelle Zhu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Michelle Zhu » Feed" href="http://www.michellezhu.co/feed/">
+<link rel="alternate" type="application/rss+xml" title="Michelle Zhu » Comments Feed" href="http://www.michellezhu.co/comments/feed/">
+		<script type="text/javascript">window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.michellezhu.co\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.16"}};!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);</script><script src="./Central Catchment Nature Reserve – Michelle Zhu_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
+<link rel="stylesheet" id="responsive-lightbox-magnific-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/magnific-popup.min.css,qver=2.0.5.pagespeed.ce.HO2tt5Y73k.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/A.font-awesome.min.css,qver=4.7.0.pagespeed.cf.EKo2ymeJf4.css" type="text/css" media="all">
+<link rel="stylesheet" id="simple-line-icons-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/simple-line-icons.min.css,qver=2.4.0.pagespeed.ce.7-gh9zP_1g.css" type="text/css" media="all">
+<link rel="stylesheet" id="oceanwp-style-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/A.main-style.css,qver=1.5.20.pagespeed.cf.YwtaIMlAtb.css" type="text/css" media="all">
+<style id="oceanwp-hamburgers-css" media="all">.hamburger{display:inline-block;cursor:pointer;transition-property:opacity,filter;transition-duration:.15s;transition-timing-function:linear;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible}a:hover .hamburger{opacity:.7}.hamburger-box{width:20px;height:16px;display:inline-block;position:relative}.hamburger-inner{display:block;top:50%;margin-top:2px}.hamburger-inner,.hamburger-inner::after,.hamburger-inner::before{width:20px;height:2px;background-color:#000;border-radius:3px;position:absolute;transition-property:transform;transition-duration:.15s;transition-timing-function:ease}.hamburger-inner::after,.hamburger-inner::before{content:"";display:block}.hamburger-inner::before{top:-7px}.hamburger-inner::after{bottom:-7px}</style>
+<style id="oceanwp-squeeze-css" media="all">.hamburger--squeeze .hamburger-inner{-webkit-transition-duration:.075s;transition-duration:.075s;-webkit-transition-timing-function:cubic-bezier(.55,.055,.675,.19);transition-timing-function:cubic-bezier(.55,.055,.675,.19)}.hamburger--squeeze .hamburger-inner::before{-webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;transition: top 0.075s 0.12s ease, opacity 0.075s ease}.hamburger--squeeze .hamburger-inner::after{-webkit-transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19)}.hamburger--squeeze.is-active .hamburger-inner{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);-webkit-transition-delay:.12s;transition-delay:.12s;-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1);transition-timing-function:cubic-bezier(.215,.61,.355,1)}.hamburger--squeeze.is-active .hamburger-inner::before{top:0;opacity:0;-webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;transition: top 0.075s ease, opacity 0.075s 0.12s ease}.hamburger--squeeze.is-active .hamburger-inner::after{bottom:0;-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transition: bottom 0.075s ease, -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1)}</style>
+<link rel="stylesheet" id="oceanwp-google-font-libre-franklin-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="oceanwp-google-font-poppins-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/A.elementor-icons.min.css,qver=4.3.0.pagespeed.cf.CPPBKWyAbR.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/A.animations.min.css,qver=2.5.14.pagespeed.cf.8GE4XnYdak.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/frontend.min.css,qver=2.5.14.pagespeed.ce.f2IAhQcJxx.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-1730-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/A.post-1730.css,qver=1586835782.pagespeed.cf.FXNuJ7PUef.css" type="text/css" media="all">
+<link rel="stylesheet" id="oe-widgets-style-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/A.widgets.css,qver=4.9.16.pagespeed.cf.bX_BAF_dOC.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/css(2)" type="text/css" media="all">
+<!--n2css--><script type="text/javascript" src="./Central Catchment Nature Reserve – Michelle Zhu_files/jquery.js,qver=1.12.4.pagespeed.jm.gp20iU5FlU.js"></script>
+<script src="./Central Catchment Nature Reserve – Michelle Zhu_files/wp-includes,_js,_jquery,_jquery-migrate.min.js,qver==1.4.1+wp-content,_plugins,_responsive-lightbox,_assets,_magnific,_jquery.magnific-popup.min.js,qver==2.0.5+wp-content,_plugins,_responsive-lightbox,_assets,_infinitescroll,_infinite-scroll.pkgd.min.j.js"></script><script>eval(mod_pagespeed_mUhmJEi5Tr);</script>
+<script>eval(mod_pagespeed_vghKAQJFB1);</script>
+<script>eval(mod_pagespeed_mNZykWI3vb);</script>
+<script type="text/javascript">//<![CDATA[
+var rlArgs={"script":"magnific","selector":"lightbox","customEvents":"","activeGalleries":"0","disableOn":"768","midClick":"1","preloader":"1","closeOnContentClick":"1","closeOnBgClick":"1","closeBtnInside":"1","showCloseBtn":"1","enableEscapeKey":"1","alignTop":"","fixedContentPos":"auto","fixedBgPos":"auto","autoFocusLast":"1","woocommerce_gallery":"0","ajaxurl":"http:\/\/www.michellezhu.co\/wp-admin\/admin-ajax.php","nonce":"99deaf54f5"};
+//]]></script>
+<script src="./Central Catchment Nature Reserve – Michelle Zhu_files/responsive-lightbox,_js,_front.js,qver==2.0.5+ocean-extra,_,_includes,_widgets,_js,_mailchimp.min.js,qver==4.9.16+ocean-extra,_,_includes,_widgets,_js,_share.min.js,qver==4.9.16.pagespeed.jc.iWREEf8K4i.js"></script><script>eval(mod_pagespeed_7C_Ybf0FP2);</script>
+<script>eval(mod_pagespeed_X$3J35Wnl9);</script>
+<script>eval(mod_pagespeed_21fwhyy0vl);</script>
+<link rel="https://api.w.org/" href="http://www.michellezhu.co/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.michellezhu.co/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.michellezhu.co/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.16">
+<link rel="canonical" href="http://www.michellezhu.co/ccnr/">
+<link rel="shortlink" href="http://www.michellezhu.co/?p=1730">
+<link rel="alternate" type="application/json+oembed" href="http://www.michellezhu.co/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.michellezhu.co%2Fccnr%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.michellezhu.co/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.michellezhu.co%2Fccnr%2F&amp;format=xml">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACVklEQVRYhe2SW0gUYRiGn3+dhNyY1iU2DaFQ6cIbhQ4blp0QKZK6KyIoDUKSCMKErECkvEqT0OhkkJKHLqSwEF2WogOhECUZS8ZSBBHLBB7W9qZsvi484A677t6EEPNezf/Nw8sz3/xgx46dJY4CmPbrF4FNAEcq3zMx6ZkHbjZsC2dlBgsDo95V97rPjwVGN6cKrAC+KegTuOIznMZvv54FVAN7gl/yM9oe1ITfjexABB0wgKdAk89wflwooM1oKC9QGsswxfGHR30V3O2sRcSho2atIQ/IQ+Ro5+kL9dBcp5Ry9fYf5879OkxT02eqAdCBXETKSjyRcp/h7JzrdyRa0fCHIlo7ahGJjSqlPL39J65N/XS7Xg6Wcqv9MqapxS5TKhVoK/FEtkRvYJF0PTyT0HN80kNHz1leDZUyv584UUppItIIbCVhMzA2nomIfNpY4K9qbykwWpu8HDtUj6b9iuKe+Mpn7o7IhNsVqr7dWDjc3lJA1clTuFYaVonCEk8kNykBETEUqqh+YP9Vd3pob+bqr9MHD7RQWVZj/TYQMQX2dY1mN6zJ+LzLnR76vruoh0vnDuNwTFurtycloKB5wEgzAJYVh9+K4AMo3tmNS/8RLQv9PsP5epadAG4AZK8NsCH/mbU3J7kNwAvL6A1AisMkZ92IFX8eiwVYnz0c3atwJSUAhBYelGJy7jktbWpRFgjPs8uj2bmrmvgXKGVaJovBZvx3scfJbOCfxhawBWyBJRfQAETkulLqcRzGsJz9QEVsVAYtg2A8VoRA0pZ27PzX+QtKAMPzExriiAAAAABJRU5ErkJggg==" sizes="32x32">
+<link rel="icon" href="http://www.michellezhu.co/wp-content/uploads/2018/07/xcropped-micon3-03-192x192.png.pagespeed.ic.g6ZtXOBTeI.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://www.michellezhu.co/wp-content/uploads/2018/07/xcropped-micon3-03-180x180.png.pagespeed.ic.sSZ8mIzST-.png">
+<meta name="msapplication-TileImage" content="http://www.michellezhu.co/wp-content/uploads/2018/07/cropped-micon3-03-270x270.png">
+		<style type="text/css" id="wp-custom-css">@font-face{font-family:"gill-sans";src:url(‘https://dl.dropboxusercontent.com/s/nv92ix2d8rt4u43/GillSansMTPro-Book.otf)}::selection{background:#f3f3f3;color:inherit}#site-logo a.site-logo-text{font-weight:400}#site-navigation{margin-top:5px}</style>
+	<!-- OceanWP CSS -->
+<style type="text/css">a:hover,a.light:hover,.theme-heading .text::before,#top-bar-content>a:hover,#top-bar-social li.oceanwp-email a:hover,#site-navigation-wrap .dropdown-menu>li>a:hover,#site-header.medium-header #medium-searchform button:hover,.oceanwp-mobile-menu-icon a:hover,.blog-entry.post .blog-entry-header .entry-title a:hover,.blog-entry.post .blog-entry-readmore a:hover,.blog-entry.thumbnail-entry .blog-entry-category a,ul.meta li a:hover,.dropcap,.single nav.post-navigation .nav-links .title,body .related-post-title a:hover,body #wp-calendar caption,body .contact-info-widget.default i,body .contact-info-widget.big-icons i,body .custom-links-widget .oceanwp-custom-links li a:hover,body .custom-links-widget .oceanwp-custom-links li a:hover:before,body .posts-thumbnails-widget li a:hover,body .social-widget li.oceanwp-email a:hover,.comment-author .comment-meta .comment-reply-link,#respond #cancel-comment-reply-link:hover,#footer-widgets .footer-box a:hover,#footer-bottom a:hover,#footer-bottom #footer-bottom-menu a:hover,.sidr a:hover,.sidr-class-dropdown-toggle:hover,.sidr-class-menu-item-has-children.active>a,.sidr-class-menu-item-has-children.active>a>.sidr-class-dropdown-toggle,input[type="checkbox"]:checked:before{color:#999}input[type="button"],input[type="reset"],input[type="submit"],button[type="submit"],.button,#site-navigation-wrap .dropdown-menu>li.btn>a>span,.thumbnail:hover i,.post-quote-content,.omw-modal .omw-close-modal,body .contact-info-widget.big-icons li:hover i{background-color:#999}.widget-title{border-color:#999}blockquote{border-color:#999}#searchform-dropdown{border-color:#999}.dropdown-menu .sub-menu{border-color:#999}.blog-entry.large-entry .blog-entry-readmore a:hover{border-color:#999}.oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#999}.social-widget li.oceanwp-email a:hover{border-color:#999}#respond #cancel-comment-reply-link:hover{border-color:#999}body .contact-info-widget.big-icons li:hover i{border-color:#999}#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#999}input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,button[type="submit"]:hover,input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,button[type="submit"]:focus,.button:hover,#site-navigation-wrap .dropdown-menu>li.btn>a:hover>span,.post-quote-author,.omw-modal .omw-close-modal:hover{background-color:#fcbd0f}a{color:#4717f6}a:hover{color:#9e86f4}.boxed-layout #wrap,.boxed-layout .parallax-footer,.boxed-layout .owp-floating-bar{width:1180px}.boxed-layout{background-color:#fff}@media only screen and (min-width:960px){.content-area,.content-left-sidebar .content-area{width:100%}}.page-header .page-header-title,.page-header.background-image-page-header .page-header-title{color:#000}#scroll-top{border-radius:64px}#top-bar{padding:8px 0 25px 0}#top-bar-wrap{border-color:#fff}#top-bar-wrap,#top-bar-content strong{color:#cecece}#site-header{border-color:#fff}#site-header.has-header-media .overlay-header-media{background-color:rgba(0,0,0,.5)}#site-logo #site-logo-inner a img,#site-header.center-header #site-navigation-wrap .middle-site-logo a img{max-width:100px}#site-logo a.site-logo-text{color:#000}#site-logo a.site-logo-text:hover{color:#4717f6}.effect-one #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-three #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-five #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:before,.effect-five #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-nine #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:before,.effect-nine #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after{background-color:#4717f6}.effect-four #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:before,.effect-four #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-seven #site-navigation-wrap .dropdown-menu>li>a.menu-link:hover>span:after,.effect-seven #site-navigation-wrap .dropdown-menu>li.sfHover>a.menu-link>span:after{color:#4717f6}.effect-seven #site-navigation-wrap .dropdown-menu>li>a.menu-link:hover>span:after,.effect-seven #site-navigation-wrap .dropdown-menu>li.sfHover>a.menu-link>span:after{text-shadow:10px 0 #4717f6,-10px 0 #4717f6}#site-navigation-wrap .dropdown-menu>li>a{padding:0 20px}#site-navigation-wrap .dropdown-menu>li>a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close{color:#000}#site-navigation-wrap .dropdown-menu>li>a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover{color:#4717f6}#site-navigation-wrap .dropdown-menu>.current-menu-item>a,#site-navigation-wrap .dropdown-menu>.current-menu-ancestor>a,#site-navigation-wrap .dropdown-menu>.current-menu-item>a:hover,#site-navigation-wrap .dropdown-menu>.current-menu-ancestor>a:hover{color:#4717f6}.dropdown-menu ul li a.menu-link{color:#000}.dropdown-menu ul li a.menu-link:hover{color:#4717f6}.dropdown-menu ul>.current-menu-item>a.menu-link{color:#4717f6}.navigation li.mega-cat ul li .mega-post-title a{color:#000}.navigation li.mega-cat ul li .mega-post-title a:hover{color:#4717f6}.mobile-menu .hamburger-inner,.mobile-menu .hamburger-inner::before,.mobile-menu .hamburger-inner::after{background-color:#000}#mobile-fullscreen{background-color:#fff}body .sidr a,body .sidr-class-dropdown-toggle,#mobile-dropdown ul li a,#mobile-dropdown ul li a .dropdown-toggle,#mobile-fullscreen ul li a,#mobile-fullscreen .oceanwp-social-menu.simple-social ul li a{color:#000}#mobile-fullscreen a.close .close-icon-inner,#mobile-fullscreen a.close .close-icon-inner::after{background-color:#000}body .sidr a:hover,body .sidr-class-dropdown-toggle:hover,body .sidr-class-dropdown-toggle .fa,body .sidr-class-menu-item-has-children.active>a,body .sidr-class-menu-item-has-children.active>a>.sidr-class-dropdown-toggle,#mobile-dropdown ul li a:hover,#mobile-dropdown ul li a .dropdown-toggle:hover,#mobile-dropdown .menu-item-has-children.active>a,#mobile-dropdown .menu-item-has-children.active>a>.dropdown-toggle,#mobile-fullscreen ul li a:hover,#mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover{color:#4717f6}#mobile-fullscreen a.close:hover .close-icon-inner,#mobile-fullscreen a.close:hover .close-icon-inner::after{background-color:#4717f6}.sidr-class-mobile-searchform button,#mobile-dropdown #mobile-menu-search form button{color:#000}.sidr-class-mobile-searchform button:hover,#mobile-dropdown #mobile-menu-search form button:hover{color:#4717f6}#footer-widgets{background-color:#fff}#footer-bottom{background-color:#fff}#footer-bottom,#footer-bottom p{color:#000}body{font-family:Libre\ Franklin;font-weight:400;font-size:16px;color:#000;letter-spacing:.5px}h1,h2,h3,h4,h5,h6,.theme-heading,.widget-title,.oceanwp-widget-recent-posts-title,.comment-reply-title,.entry-title,.sidebar-box .widget-title{font-family:Poppins;font-weight:700;color:#000;letter-spacing:2.5px;text-transform:uppercase}@media (max-width:480px){h1,h2,h3,h4,h5,h6,.theme-heading,.widget-title,.oceanwp-widget-recent-posts-title,.comment-reply-title,.entry-title,.sidebar-box .widget-title{line-height:1.4;letter-spacing:2.5px}}#site-logo a.site-logo-text{font-family:Poppins;font-weight:600;font-size:36px;letter-spacing:5px;text-transform:uppercase}@media (max-width:480px){#site-logo a.site-logo-text{font-size:26px}}#site-navigation-wrap .dropdown-menu>li>a,#site-header.full_screen-header .fs-dropdown-menu>li>a,#site-header.top-header #site-navigation-wrap .dropdown-menu>li>a,#site-header.center-header #site-navigation-wrap .dropdown-menu>li>a,#site-header.medium-header #site-navigation-wrap .dropdown-menu>li>a,.oceanwp-mobile-menu-icon a{font-family:Poppins;font-weight:600;font-size:18px;letter-spacing:2px;text-transform:uppercase}.sidr-class-dropdown-menu li a,a.sidr-class-toggle-sidr-close,#mobile-dropdown ul li a,body #mobile-fullscreen ul li a{font-family:Poppins;text-transform:uppercase}@media (max-width:768px){.sidr-class-dropdown-menu li a,a.sidr-class-toggle-sidr-close,#mobile-dropdown ul li a,body #mobile-fullscreen ul li a{letter-spacing:3.9px}}.page-header .page-header-title,.page-header.background-image-page-header .page-header-title{font-family:Poppins;font-weight:400;letter-spacing:4px}.blog-entry.post .blog-entry-header .entry-title a{font-weight:600;color:#000;letter-spacing:2px}#footer-bottom #copyright{font-family:Poppins;font-weight:500;font-size:14px;letter-spacing:3.3px;text-transform:uppercase}</style>	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><link href="chrome-extension://cjdnfmjmdligcpfcekfmenlhiopehjkd/web_resources/modal/modal.css" rel="stylesheet" id="__tmpStyle"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="page-template page-template-elementor_canvas page page-id-1730 wp-custom-logo no-lightbox no-carousel oceanwp-theme fullscreen-mobile boxed-layout default-breakpoint content-full-width content-max-width has-topbar page-header-disabled has-blog-grid elementor-default elementor-template-canvas elementor-page elementor-page-1730" data-elementor-device-mode="desktop" style=""><div id="MathJax_Message" style="display: none;"></div>
+			<div data-elementor-type="post" data-elementor-id="1730" class="elementor elementor-1730" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-609e9600 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="609e9600" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-65761fd1 elementor-column elementor-col-100 elementor-top-column" data-id="65761fd1" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4ccbe388 elementor-widget elementor-widget-spacer" data-id="4ccbe388" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<section class="elementor-element elementor-element-245b957 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="245b957" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2a5374cd elementor-column elementor-col-25 elementor-inner-column" data-id="2a5374cd" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7d5f834d elementor-widget elementor-widget-heading" data-id="7d5f834d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/nature-reserves-in-singapore/">HOME</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-2a6ab642 elementor-column elementor-col-25 elementor-inner-column" data-id="2a6ab642" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7422a61e elementor-widget elementor-widget-heading" data-id="7422a61e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/urban-ecology-introduction/">INTRODUCTION</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-d316aa7 elementor-column elementor-col-25 elementor-inner-column" data-id="d316aa7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-40483a26 elementor-widget elementor-widget-heading" data-id="40483a26" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/urban-ecology-methods/">METHODS</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-35f0b28d elementor-column elementor-col-25 elementor-inner-column" data-id="35f0b28d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-55e0e00e elementor-widget elementor-widget-heading" data-id="55e0e00e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/urban-ecology-results/">NATURE RESERVES</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-ee7e86b elementor-widget elementor-widget-spacer" data-id="ee7e86b" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7e596e35 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7e596e35" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-591df1b6 elementor-column elementor-col-100 elementor-top-column" data-id="591df1b6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5080b28f elementor-widget elementor-widget-spacer" data-id="5080b28f" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-146b4a92 elementor-widget elementor-widget-heading" data-id="146b4a92" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">Central Catchment Nature Reserve</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-24b29c4 elementor-widget elementor-widget-spacer" data-id="24b29c4" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ae2d41e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ae2d41e" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a5f0d79 elementor-column elementor-col-50 elementor-top-column" data-id="a5f0d79" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4178122 elementor-widget elementor-widget-image" data-id="4178122" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_8832-2.jpg" data-elementor-open-lightbox="yes">
+							<script pagespeed_no_defer="">//<![CDATA[
+(function(){var g=this,h=function(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};var l=function(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};var m=function(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n,p=function(b,d,a,c,e){this.f=b;this.h=d;this.i=a;this.c=e;this.e={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.g=c;this.b={};this.a=[];this.d={}},q=function(b,d){var a,c,e=d.getAttribute("pagespeed_url_hash");if(a=e&&!(e in b.d))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.e.height&&c<=b.e.width)}a&&(b.a.push(e),b.d[e]=!0)};p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});var r=function(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.i;b.c&&(a+="&n="+b.c);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.g&&(e="&rd="+encodeURIComponent(JSON.stringify(s())),131072>=a.length+e.length&&(a+=e),d=!0);t=a;if(d){c=b.f;b=b.h;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(u){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}},s=function(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("pagespeed_url_hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].k&&a.height>=b[e].j)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b},t="";h("pagespeed.CriticalImages.getBeaconData",function(){return t});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','http://www.michellezhu.co/ccnr/','YddRYU7ik1',true,false,'8_NhBY0oMsA');
+//]]></script><img width="1024" height="768" src="./Central Catchment Nature Reserve – Michelle Zhu_files/1024x768xIMG_8832-2-1024x768.jpg.pagespeed.ic.SPaauM20Sf.webp" class="attachment-large size-large" alt="" srcset="http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_8832-2-1024x768.jpg 1024w, http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_8832-2-300x225.jpg 300w, http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_8832-2-768x576.jpg 768w, http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_8832-2.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" pagespeed_url_hash="527586369" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">								</a>
+											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-fb2fd06 elementor-column elementor-col-50 elementor-top-column" data-id="fb2fd06" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ab993a8 elementor-widget elementor-widget-image" data-id="ab993a8" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_5460-2.jpg" data-elementor-open-lightbox="yes">
+							<img width="1024" height="768" src="./Central Catchment Nature Reserve – Michelle Zhu_files/1024x768xIMG_5460-2-1024x768.jpg.pagespeed.ic.nbNLfGzSTt.webp" class="attachment-large size-large" alt="" srcset="http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_5460-2-1024x768.jpg 1024w, http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_5460-2-300x225.jpg 300w, http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_5460-2-768x576.jpg 768w, http://www.michellezhu.co/wp-content/uploads/2020/04/IMG_5460-2.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" pagespeed_url_hash="2842929223" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">								</a>
+											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-56b769ff elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="56b769ff" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}" style="width: 1280px; left: 0px;">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-6e298ef elementor-column elementor-col-100 elementor-top-column" data-id="6e298ef" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-59a54297 elementor-widget elementor-widget-spacer" data-id="59a54297" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5901bee8 elementor-widget elementor-widget-heading" data-id="5901bee8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">WHAT ARE SOME CHARACTERISTICS OF OUR RESPONDENTS?*</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3333901b elementor-widget elementor-widget-spacer" data-id="3333901b" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<section class="elementor-element elementor-element-4bf459c5 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="4bf459c5" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-253a1f52 elementor-column elementor-col-33 elementor-inner-column" data-id="253a1f52" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3e85d0b6 elementor-widget elementor-widget-heading" data-id="3e85d0b6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">REGION OF RESIDENCE</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3b98c06a elementor-widget elementor-widget-text-editor" data-id="3b98c06a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>The largest proportions of respondents reside in the Central and East parts of Singapore.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-4244157f elementor-column elementor-col-66 elementor-inner-column" data-id="4244157f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6d8cc3e5 elementor-widget elementor-widget-image" data-id="6d8cc3e5" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="650" height="369" src="./Central Catchment Nature Reserve – Michelle Zhu_files/650x369xResidence_CCNR.jpg.pagespeed.ic.hhVfUMc7aW.webp" class="attachment-large size-large" alt="" srcset="http://www.michellezhu.co/wp-content/uploads/2020/04/Residence_CCNR.jpg 650w, http://www.michellezhu.co/wp-content/uploads/2020/04/Residence_CCNR-300x170.jpg 300w" sizes="(max-width: 650px) 100vw, 650px" pagespeed_url_hash="654823469" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-669146a2 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="669146a2" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-14f84e6a elementor-column elementor-col-33 elementor-inner-column" data-id="14f84e6a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-490f1e24 elementor-widget elementor-widget-heading" data-id="490f1e24" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">COMMUTE</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-26b95ccb elementor-widget elementor-widget-text-editor" data-id="26b95ccb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Majority of respondents travel to CCNR by public transportation as opposed to on foot or by private hire.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-65395a38 elementor-column elementor-col-66 elementor-inner-column" data-id="65395a38" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-74b0334a elementor-widget elementor-widget-image" data-id="74b0334a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="638" height="362" src="./Central Catchment Nature Reserve – Michelle Zhu_files/Commute_CCNR.jpg" class="attachment-large size-large" alt="" srcset="http://www.michellezhu.co/wp-content/uploads/2020/04/Commute_CCNR.jpg 638w, http://www.michellezhu.co/wp-content/uploads/2020/04/Commute_CCNR-300x170.jpg 300w" sizes="(max-width: 638px) 100vw, 638px" pagespeed_url_hash="1630332377" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-35a5520d elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="35a5520d" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3658adef elementor-column elementor-col-33 elementor-inner-column" data-id="3658adef" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-56ae6bd8 elementor-widget elementor-widget-heading" data-id="56ae6bd8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">AGE</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-4a11c5e9 elementor-widget elementor-widget-text-editor" data-id="4a11c5e9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Most respondents are middle-aged, or in their 30s and 40s.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-16b0c90a elementor-column elementor-col-66 elementor-inner-column" data-id="16b0c90a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-67b6171a elementor-widget elementor-widget-image" data-id="67b6171a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="649" height="376" src="./Central Catchment Nature Reserve – Michelle Zhu_files/Age_CCNR.jpg" class="attachment-large size-large" alt="" srcset="http://www.michellezhu.co/wp-content/uploads/2020/04/Age_CCNR.jpg 649w, http://www.michellezhu.co/wp-content/uploads/2020/04/Age_CCNR-300x174.jpg 300w" sizes="(max-width: 649px) 100vw, 649px" pagespeed_url_hash="303705612" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-1f95350a elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="1f95350a" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-59871bf7 elementor-column elementor-col-33 elementor-inner-column" data-id="59871bf7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6ccfbd26 elementor-widget elementor-widget-heading" data-id="6ccfbd26" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">RELATIONSHIP STATUS</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-350f3204 elementor-widget elementor-widget-text-editor" data-id="350f3204" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Percentage of respondents in a relationship is slightly greater than that of respondents who are single.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-d38572d elementor-column elementor-col-66 elementor-inner-column" data-id="d38572d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-56c11525 elementor-widget elementor-widget-image" data-id="56c11525" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="639" height="359" src="./Central Catchment Nature Reserve – Michelle Zhu_files/Relationship_CCNR.jpg" class="attachment-large size-large" alt="" srcset="http://www.michellezhu.co/wp-content/uploads/2020/04/Relationship_CCNR.jpg 639w, http://www.michellezhu.co/wp-content/uploads/2020/04/Relationship_CCNR-300x169.jpg 300w" sizes="(max-width: 639px) 100vw, 639px" pagespeed_url_hash="1734261153" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-1b1ea995 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="1b1ea995" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-421ceaac elementor-column elementor-col-33 elementor-inner-column" data-id="421ceaac" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-c52be0b elementor-widget elementor-widget-heading" data-id="c52be0b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">ADMISSION FEE</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6eb785a1 elementor-widget elementor-widget-text-editor" data-id="6eb785a1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>A larger proportion of respondents are willing to pay an admission fee to enter CCNR.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-485cc838 elementor-column elementor-col-66 elementor-inner-column" data-id="485cc838" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4eaa6ad5 elementor-widget elementor-widget-image" data-id="4eaa6ad5" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="646" height="359" src="./Central Catchment Nature Reserve – Michelle Zhu_files/Admission_CCNR.jpg" class="attachment-large size-large" alt="" srcset="http://www.michellezhu.co/wp-content/uploads/2020/04/Admission_CCNR.jpg 646w, http://www.michellezhu.co/wp-content/uploads/2020/04/Admission_CCNR-300x167.jpg 300w" sizes="(max-width: 646px) 100vw, 646px" pagespeed_url_hash="1628403202" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-1ddfaf1 elementor-widget elementor-widget-text-editor" data-id="1ddfaf1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>*Each chart indicates percentage and number of respondents for a particular attribute</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-a616098 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="a616098" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a41578f elementor-column elementor-col-100 elementor-top-column" data-id="a41578f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e65cad2 elementor-widget elementor-widget-spacer" data-id="e65cad2" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<section class="elementor-element elementor-element-f67c1ff elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="f67c1ff" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-fda76dd elementor-column elementor-col-50 elementor-inner-column" data-id="fda76dd" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-8fabd55 elementor-widget elementor-widget-html" data-id="8fabd55" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<iframe style="width:max; height: 350px;" src="./Central Catchment Nature Reserve – Michelle Zhu_files/saved_resource.html"></iframe>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-01ebd61 elementor-column elementor-col-50 elementor-inner-column" data-id="01ebd61" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-caf8935 elementor-widget elementor-widget-heading" data-id="caf8935" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">What are the most commonly used words among respondents? </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-072ef23 elementor-widget elementor-widget-text-editor" data-id="072ef23" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>For CCNR, respondents most frequently used the words&nbsp;“nature”, “exercise”, “near”, “relaxing” and “walk” in their reasons for visiting the nature park.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-e027a3b elementor-widget elementor-widget-spacer" data-id="e027a3b" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-155450f elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="155450f" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}" style="width: 1280px; left: 0px;">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-06de43f elementor-column elementor-col-100 elementor-top-column" data-id="06de43f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f25af88 elementor-widget elementor-widget-heading" data-id="f25af88" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Take the quiz to learn more about CCNR...</h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-11750ec elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="11750ec" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a1d05a4 elementor-column elementor-col-100 elementor-top-column" data-id="a1d05a4" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6d7700f elementor-widget elementor-widget-spacer" data-id="6d7700f" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-f86e115 elementor-widget elementor-widget-shortcode" data-id="f86e115" data-element_type="widget" data-widget_type="shortcode.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-shortcode"><script>if(window.qmn_quiz_data===undefined){window.qmn_quiz_data=new Object();}</script><div class="qsm-quiz-container qmn_quiz_container mlw_qmn_quiz"><form name="quizForm9" id="quizForm9" action="http://www.michellezhu.co/ccnr/" method="POST" class="qsm-quiz-form qmn_quiz_form mlw_quiz_form" novalidate="" enctype="multipart/form-data"><div name="mlw_error_message" id="mlw_error_message" class="qsm-error-message qmn_error_message_section"></div><span id="mlw_top_of_quiz"></span>            <section class="qsm-page " style="display: block;">
+                                    <div class="quiz_section question-section-id-9">
+                        <span class="mlw_qmn_question ">How many nature parks buffer CCNR?</span><input type="text" class="mlw_answer_open_text " name="question9">                    </div>
+                                </section>
+                    <!-- View for pagination -->
+        <script type="text/template" id="tmpl-qsm-pagination">
+            <div class="qsm-pagination qmn_pagination border margin-bottom">
+            <a class="qsm-btn qsm-previous qmn_btn mlw_qmn_quiz_link mlw_previous" href="#">Previous</a>
+            <span class="qmn_page_message"></span>
+            <div class="qmn_page_counter_message"></div>
+            <div id="qsm-progress-bar" style="display:none;"></div>
+            <a class="qsm-btn qsm-next qmn_btn mlw_qmn_quiz_link mlw_next" href="#">Next</a>
+            <input type='submit' class='qsm-btn qsm-submit-btn qmn_btn' value='Submit' />
+            </div>
+        </script>
+        <input type="hidden" name="qmn_question_list" value="9Q">
+        <div name="mlw_error_message_bottom" id="mlw_error_message_bottom" class="qsm-error-message qmn_error_message_section"></div><input type="hidden" name="total_questions" id="total_questions" value="1"><input type="hidden" name="timer" id="timer" value="5"><input type="hidden" class="qmn_quiz_id" name="qmn_quiz_id" id="qmn_quiz_id" value="9"><input type="hidden" name="complete_quiz" value="confirmation">
+            <div class="qsm-pagination qmn_pagination border margin-bottom">
+            <a class="qsm-btn qsm-previous qmn_btn mlw_qmn_quiz_link mlw_previous" href="http://www.michellezhu.co/ccnr/#" style="display: none;">Previous</a>
+            <span class="qmn_page_message"></span>
+            <div class="qmn_page_counter_message"></div>
+            <div id="qsm-progress-bar" style="display:none;"></div>
+            <a class="qsm-btn qsm-next qmn_btn mlw_qmn_quiz_link mlw_next" href="http://www.michellezhu.co/ccnr/#" style="display: none;">Next</a>
+            <input type="submit" class="qsm-btn qsm-submit-btn qmn_btn" value="Submit" style="display: block;">
+            </div>
+        </form></div><script>window.qmn_quiz_data["9"]={"quiz_id":"9","quiz_name":"CCNR Q1","disable_answer":"0","ajax_show_correct":"0","progress_bar":0,"error_messages":{"email":"Not a valid e-mail address!","number":"This field must be a number!","incorrect":"The entered text is not correct!","empty":"Please complete all required fields!"}}</script></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-a1bc3d5 elementor-widget elementor-widget-divider" data-id="a1bc3d5" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator"></span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-3aee7cc elementor-widget elementor-widget-shortcode" data-id="3aee7cc" data-element_type="widget" data-widget_type="shortcode.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-shortcode"><script>if(window.qmn_quiz_data===undefined){window.qmn_quiz_data=new Object();}</script><div class="qsm-quiz-container qmn_quiz_container mlw_qmn_quiz"><form name="quizForm10" id="quizForm10" action="http://www.michellezhu.co/ccnr/" method="POST" class="qsm-quiz-form qmn_quiz_form mlw_quiz_form" novalidate="" enctype="multipart/form-data"><div name="mlw_error_message" id="mlw_error_message" class="qsm-error-message qmn_error_message_section"></div><span id="mlw_top_of_quiz"></span>            <section class="qsm-page " style="display: block;">
+                                    <div class="quiz_section question-section-id-12">
+                        <span class="mlw_qmn_question "><span style="font-weight: 400">Did you know that it is illegal to feed the Long-tailed Macaques (monkeys) found in CCNR?</span></span><div class="qmn_radio_answers "><div class="qmn_mc_answer_wrap" id="question12-Yes"><input type="radio" class="qmn_quiz_radio" name="question12" id="question12_1" value="Yes"> <label for="question12_1">Yes</label></div><div class="qmn_mc_answer_wrap" id="question12-No"><input type="radio" class="qmn_quiz_radio" name="question12" id="question12_2" value="No"> <label for="question12_2">No</label></div><input type="radio" style="display: none;" name="question12" id="question12_none" checked="checked" value="No Answer Provided"></div>                    </div>
+                                </section>
+                    <!-- View for pagination -->
+        <script type="text/template" id="tmpl-qsm-pagination">
+            <div class="qsm-pagination qmn_pagination border margin-bottom">
+            <a class="qsm-btn qsm-previous qmn_btn mlw_qmn_quiz_link mlw_previous" href="#">Previous</a>
+            <span class="qmn_page_message"></span>
+            <div class="qmn_page_counter_message"></div>
+            <div id="qsm-progress-bar" style="display:none;"></div>
+            <a class="qsm-btn qsm-next qmn_btn mlw_qmn_quiz_link mlw_next" href="#">Next</a>
+            <input type='submit' class='qsm-btn qsm-submit-btn qmn_btn' value='Submit' />
+            </div>
+        </script>
+        <input type="hidden" name="qmn_question_list" value="12Q">
+        <div name="mlw_error_message_bottom" id="mlw_error_message_bottom" class="qsm-error-message qmn_error_message_section"></div><input type="hidden" name="total_questions" id="total_questions" value="1"><input type="hidden" name="timer" id="timer" value="0"><input type="hidden" class="qmn_quiz_id" name="qmn_quiz_id" id="qmn_quiz_id" value="10"><input type="hidden" name="complete_quiz" value="confirmation">
+            <div class="qsm-pagination qmn_pagination border margin-bottom">
+            <a class="qsm-btn qsm-previous qmn_btn mlw_qmn_quiz_link mlw_previous" href="http://www.michellezhu.co/ccnr/#" style="display: none;">Previous</a>
+            <span class="qmn_page_message"></span>
+            <div class="qmn_page_counter_message"></div>
+            <div id="qsm-progress-bar" style="display:none;"></div>
+            <a class="qsm-btn qsm-next qmn_btn mlw_qmn_quiz_link mlw_next" href="http://www.michellezhu.co/ccnr/#" style="display: none;">Next</a>
+            <input type="submit" class="qsm-btn qsm-submit-btn qmn_btn" value="Submit" style="display: block;">
+            </div>
+        </form></div><script>window.qmn_quiz_data["10"]={"quiz_id":"10","quiz_name":"CCNR Q2","disable_answer":"0","ajax_show_correct":"0","progress_bar":0,"error_messages":{"email":"Not a valid e-mail address!","number":"This field must be a number!","incorrect":"The entered text is not correct!","empty":"Please complete all required fields!"}}</script></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-3569368 elementor-widget elementor-widget-spacer" data-id="3569368" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3a70e838 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3a70e838" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-78b71f3c elementor-column elementor-col-100 elementor-top-column" data-id="78b71f3c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-24f64051 elementor-widget elementor-widget-spacer" data-id="24f64051" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5dc2dff9 elementor-widget elementor-widget-heading" data-id="5dc2dff9" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Learn more about Each Nature Park</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-40b823da elementor-widget elementor-widget-spacer" data-id="40b823da" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<section class="elementor-element elementor-element-75c04e6c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="75c04e6c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-74ecfd36 elementor-column elementor-col-50 elementor-inner-column" data-id="74ecfd36" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-54d63f16 elementor-align-center elementor-widget elementor-widget-button" data-id="54d63f16" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://www.michellezhu.co/btnr/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">BUKIT TIMAH NATURE RESERVE</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-55e03f46 elementor-align-center elementor-widget elementor-widget-button" data-id="55e03f46" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://www.michellezhu.co/ccnr/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">CENTRAL CATCHMENT NATURE RESERVE</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-b229c95 elementor-column elementor-col-50 elementor-inner-column" data-id="b229c95" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6c15109c elementor-align-center elementor-widget elementor-widget-button" data-id="6c15109c" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://www.michellezhu.co/lnr/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">LABRADOR NATURE RESERVE</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-76ae9f5c elementor-align-center elementor-widget elementor-widget-button" data-id="76ae9f5c" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://www.michellezhu.co/sbwr/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">SUNGEI BULOH WETLAND RESERVE</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-1ad1f411 elementor-widget elementor-widget-spacer" data-id="1ad1f411" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		<link rel="stylesheet" id="qmn_quiz_template-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/A.qmn_primary.css,qver=6.4.5.pagespeed.cf.2VijMyl1A9.css" type="text/css" media="all">
+<link rel="stylesheet" id="qmn_quiz_animation_style-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/A.animate.css,qver=4.9.16.pagespeed.cf.XO3S1claTa.css" type="text/css" media="all">
+<style id="qmn_quiz_common_style-css" media="all">.pages_count,.qsm-page .pages_count,.quiz_section .pages_count{display:block;text-align:center}.mlw_qmn_question p:empty{display:none}.MJXc-display{display:inline-block!important}.mlw_qmn_question{display:block}.polar-question-title{margin-bottom:50px;font-size:20px;line-height:20px}.question-type-polar-s{display:inline-block!important;position:relative;width:100%}.question-type-polar-s br{display:none}.question-type-polar-s .left-polar-title{width:25%;position:absolute;left:0;top:50%;transform:translateY(-50%);line-height:normal}.question-type-polar-s .slider-main-wrapper{width:45%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}.question-type-polar-s .right-polar-title{width:25%;position:absolute;right:0;top:50%;transform:translateY(-50%);line-height:normal}.question-type-polar-s .ui-widget-content{background:#a5a5a5;border-color:#a5a5a5;border-radius:0;height:20px}.question-type-polar-s .ui-widget-content .ui-slider-handle{background:#777171;height:32px;border-color:#777171;top:-7px;border-radius:0px}.qsm-deselect-answer{float:right}@media screen and (max-width:767px){.question-type-polar-s .left-polar-title,.question-type-polar-s .slider-main-wrapper,.question-type-polar-s .right-polar-title{width:100%;position:relative;top:auto;left:auto;right:auto;bottom:auto;transform:none;margin-bottom:30px}.question-type-polar-s{height:auto!important}}</style>
+<link rel="stylesheet" id="dashicons-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/A.dashicons.min.css,qver=4.9.16.pagespeed.cf.0FA-WrD-9_.css" type="text/css" media="all">
+<link rel="stylesheet" id="jquery-redmond-theme-css" href="./Central Catchment Nature Reserve – Michelle Zhu_files/jquery-ui.css,qver=4.9.16.pagespeed.ce.SQnCDoSyT5.css" type="text/css" media="all">
+<script type="text/javascript" src="./Central Catchment Nature Reserve – Michelle Zhu_files/imagesloaded.min.js,qver=3.2.0.pagespeed.ce.0MLA1-N2Uu.js"></script>
+<script type="text/javascript">//<![CDATA[
+var oceanwpLocalize={"isRTL":"","menuSearchStyle":"disabled","sidrSource":null,"sidrDisplace":"","sidrSide":"left","sidrDropdownTarget":"link","verticalHeaderTarget":"icon","customSelects":".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select","ajax_url":"http:\/\/www.michellezhu.co\/wp-admin\/admin-ajax.php","stickElements":""};
+//]]></script>
+<script type="text/javascript" src="./Central Catchment Nature Reserve – Michelle Zhu_files/main-scripts.js,qver=1.5.20.pagespeed.jm.wwFbay6JGl.js"></script>
+<script src="./Central Catchment Nature Reserve – Michelle Zhu_files/wp-content,_plugins,_ocean-stick-anything,_assets,_js,_sticky-kit.min.js,qver==1.0.2+wp-content,_plugins,_ocean-stick-anything,_assets,_js,_main.min.js,qver==1.0.2+wp-includes,_js,_wp-embed.min.js,qver==4.9.16.pagespeed.jc.iZ5Kjflug0.js"></script><script>eval(mod_pagespeed_n0uLN7369D);</script>
+<script>eval(mod_pagespeed_Refis8hT10);</script>
+<script>eval(mod_pagespeed_ZxuariynXm);</script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.michellezhu.co/wp-content/themes/oceanwp/assets/js//third/html5.min.js?ver=1.5.20'></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script type='text/javascript' src='http://www.michellezhu.co/wp-includes/js/json2.min.js?ver=2015-05-03'></script>
+<![endif]-->
+<script src="./Central Catchment Nature Reserve – Michelle Zhu_files/wp-includes,_js,_jquery,_ui,_core.min.js,qver==1.11.4+wp-includes,_js,_jquery,_ui,_widget.min.js,qver==1.11.4+wp-includes,_js,_jquery,_ui,_position.min.js,qver==1.11.4+wp-includes,_js,_jquery,_ui,_tooltip.min.js,qver==1.11.4+wp-content,_plugins,_quiz-m.js"></script><script>eval(mod_pagespeed_Dk2M868_qS);</script>
+<script>eval(mod_pagespeed_kTL1ZJM98_);</script>
+<script>eval(mod_pagespeed_BaeQKFX3LB);</script>
+<script>eval(mod_pagespeed_FhPRZ57AfH);</script>
+<script>eval(mod_pagespeed__1tsgnIe3p);</script>
+<script type="text/javascript" src="./Central Catchment Nature Reserve – Michelle Zhu_files/jquery-ui.js"></script>
+<script>eval(mod_pagespeed_T3JvRFdltc);</script>
+<script>eval(mod_pagespeed_QPnwstRiLq);</script>
+<script type="text/javascript" src="./Central Catchment Nature Reserve – Michelle Zhu_files/jquery.ui.touch-punch.min.js"></script>
+<script>eval(mod_pagespeed_JMT55iCIec);</script>
+<script type="text/javascript">//<![CDATA[
+var _wpUtilSettings={"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+//]]></script>
+<script type="text/javascript">//<![CDATA[
+window.wp=window.wp||{},function(a){var b="undefined"==typeof _wpUtilSettings?{}:_wpUtilSettings;wp.template=_.memoize(function(b){var c,d={evaluate:/<#([\s\S]+?)#>/g,interpolate:/\{\{\{([\s\S]+?)\}\}\}/g,escape:/\{\{([^\}]+?)\}\}(?!\})/g,variable:"data"};return function(e){return(c=c||_.template(a("#tmpl-"+b).html(),d))(e)}}),wp.ajax={settings:b.ajax||{},post:function(a,b){return wp.ajax.send({data:_.isObject(a)?a:_.extend(b||{},{action:a})})},send:function(b,c){var d,e;return _.isObject(b)?c=b:(c=c||{},c.data=_.extend(c.data||{},{action:b})),c=_.defaults(c||{},{type:"POST",url:wp.ajax.settings.url,context:this}),e=a.Deferred(function(b){c.success&&b.done(c.success),c.error&&b.fail(c.error),delete c.success,delete c.error,b.jqXHR=a.ajax(c).done(function(a){"1"!==a&&1!==a||(a={success:!0}),_.isObject(a)&&!_.isUndefined(a.success)?b[a.success?"resolveWith":"rejectWith"](this,[a.data]):b.rejectWith(this,[a])}).fail(function(){b.rejectWith(this,arguments)})}),d=e.promise(),d.abort=function(){return e.jqXHR.abort(),this},d}}}(jQuery);
+//]]></script>
+<script type="text/javascript">//<![CDATA[
+var qmn_ajax_object={"ajaxurl":"http:\/\/www.michellezhu.co\/wp-admin\/admin-ajax.php","enable_quick_result_mc":"0","enable_result_after_timer_end":"0"};var qmn_ajax_object={"ajaxurl":"http:\/\/www.michellezhu.co\/wp-admin\/admin-ajax.php","enable_quick_result_mc":"0","enable_result_after_timer_end":"0"};
+//]]></script>
+<script src="./Central Catchment Nature Reserve – Michelle Zhu_files/quiz-master-next,_js,_qsm-quiz.js,qver==6.4.5+elementor,_assets,_js,_frontend-modules.min.js,qver==2.5.14+elementor,_assets,_lib,_dialog,_dialog.min.js,qver==4.7.1+elementor,_assets,_lib,_waypoints,_waypoints.min.js,qver==4.0.2.pagespeed.jc.LO0Wck_DP7.js"></script><script>eval(mod_pagespeed_TqI6aSWVMO);</script>
+<script type="text/javascript" src="./Central Catchment Nature Reserve – Michelle Zhu_files/MathJax.js"></script>
+<script>eval(mod_pagespeed_zOzQyB2Yve);</script>
+<script>eval(mod_pagespeed_aNpbSAmXvf);</script>
+<script>eval(mod_pagespeed_BELEYttzmd);</script>
+<script type="text/javascript" src="./Central Catchment Nature Reserve – Michelle Zhu_files/swiper.min.js,qver=4.4.6.pagespeed.jm.b6eRSjZRcI.js"></script>
+<script type="text/javascript">var elementorFrontendConfig={"environmentMode":{"edit":false,"wpPreview":false},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.5.14","urls":{"assets":"http:\/\/www.michellezhu.co\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_enable_lightbox_in_editor":"yes"}},"post":{"id":1730,"title":"Central Catchment Nature Reserve","excerpt":""}};</script>
+<script type="text/javascript" src="./Central Catchment Nature Reserve – Michelle Zhu_files/frontend.min.js,qver=2.5.14.pagespeed.jm.CXF08DUeDh.js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+	
+
+<div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div>
+    <div id="twoseven-ext-tab-media-modal" class="twoseven-ext-tab-media-modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="twoseven-ext-tab-media-modal-content">
+        <div class="iframe-container" style="height: 100%; width: 100%;">
+          <span class="close">×</span>
+        </div>
+      </div>
+    </div></div></body></html>

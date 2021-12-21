@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://www.michellezhu.co/bgh-policy-practice-interventions/ -->
+<html lang="en-US"><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;"><script type="text/javascript" id="__tmpScript-733753072" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-40215781" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-438443631" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-132704896" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-43164176" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-903806782" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-469892570" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-623148560" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-713795342" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-182061079" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-754064363" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-229481796" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-441433494" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-480084799" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-120715389" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-165140188" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-881965617" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-692985949" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-170743120" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-679134845" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-921564749" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-420834562" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-685551546" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-792566067" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-930118029" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-550256449" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-99012074" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-35601450" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-217540759" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-408980886" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-904386725" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-172992782" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-978774093" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-416060654" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-287056547" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-68498158" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-903778403" data-added-by-two-seven="1">(function() {
+        
+      const modal = document.querySelector('.twoseven-ext-tab-media-modal')
+      const modalCloseBtn = modal.querySelector('.close')
+      function closeModal () {
+        modal.style.display = 'none'
+        const frame = document.querySelector('#twoseven-ext-tab-media-iframe').contentWindow
+        frame.postMessage({
+          __evt_name: 'modal-hide'
+        }, '*')
+      }
+      modalCloseBtn.onclick = closeModal
+
+      window.onmessage = function (e) {
+        if (e.data.__evt_name === 'modal-hide') {
+          closeModal()
+        }
+      }
+
+      window.twoseven.closeTabMediaModal = closeModal
+
+      window.onclick = function (e) {
+        if (e.target.id === 'twoseven-ext-tab-media-modal' && modal.style.display === 'block') {
+            closeModal()
+        }
+      }
+    ;
+      })();</script></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<title>Policy &amp; Practice Interventions – Michelle Zhu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Michelle Zhu » Feed" href="http://www.michellezhu.co/feed/">
+<link rel="alternate" type="application/rss+xml" title="Michelle Zhu » Comments Feed" href="http://www.michellezhu.co/comments/feed/">
+		<script type="text/javascript">window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.michellezhu.co\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.16"}};!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);</script><script src="./Policy &amp; Practice Interventions – Michelle Zhu_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
+<link rel="stylesheet" id="responsive-lightbox-magnific-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/magnific-popup.min.css,qver=2.0.5.pagespeed.ce.HO2tt5Y73k.css" type="text/css" media="all">
+<link rel="stylesheet" id="eael-front-end-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/eael-post-1320.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/A.font-awesome.min.css,qver=4.7.0.pagespeed.cf.EKo2ymeJf4.css" type="text/css" media="all">
+<link rel="stylesheet" id="simple-line-icons-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/simple-line-icons.min.css,qver=2.4.0.pagespeed.ce.7-gh9zP_1g.css" type="text/css" media="all">
+<link rel="stylesheet" id="oceanwp-style-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/A.main-style.css,qver=1.5.20.pagespeed.cf.YwtaIMlAtb.css" type="text/css" media="all">
+<style id="oceanwp-hamburgers-css" media="all">.hamburger{display:inline-block;cursor:pointer;transition-property:opacity,filter;transition-duration:.15s;transition-timing-function:linear;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible}a:hover .hamburger{opacity:.7}.hamburger-box{width:20px;height:16px;display:inline-block;position:relative}.hamburger-inner{display:block;top:50%;margin-top:2px}.hamburger-inner,.hamburger-inner::after,.hamburger-inner::before{width:20px;height:2px;background-color:#000;border-radius:3px;position:absolute;transition-property:transform;transition-duration:.15s;transition-timing-function:ease}.hamburger-inner::after,.hamburger-inner::before{content:"";display:block}.hamburger-inner::before{top:-7px}.hamburger-inner::after{bottom:-7px}</style>
+<style id="oceanwp-squeeze-css" media="all">.hamburger--squeeze .hamburger-inner{-webkit-transition-duration:.075s;transition-duration:.075s;-webkit-transition-timing-function:cubic-bezier(.55,.055,.675,.19);transition-timing-function:cubic-bezier(.55,.055,.675,.19)}.hamburger--squeeze .hamburger-inner::before{-webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;transition: top 0.075s 0.12s ease, opacity 0.075s ease}.hamburger--squeeze .hamburger-inner::after{-webkit-transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19)}.hamburger--squeeze.is-active .hamburger-inner{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);-webkit-transition-delay:.12s;transition-delay:.12s;-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1);transition-timing-function:cubic-bezier(.215,.61,.355,1)}.hamburger--squeeze.is-active .hamburger-inner::before{top:0;opacity:0;-webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;transition: top 0.075s ease, opacity 0.075s 0.12s ease}.hamburger--squeeze.is-active .hamburger-inner::after{bottom:0;-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transition: bottom 0.075s ease, -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1)}</style>
+<link rel="stylesheet" id="oceanwp-google-font-libre-franklin-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="oceanwp-google-font-poppins-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/A.elementor-icons.min.css,qver=4.3.0.pagespeed.cf.CPPBKWyAbR.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/A.animations.min.css,qver=2.5.14.pagespeed.cf.8GE4XnYdak.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/frontend.min.css,qver=2.5.14.pagespeed.ce.f2IAhQcJxx.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-1320-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/A.post-1320.css,qver=1557613326.pagespeed.cf.Acl2Ja7sXX.css" type="text/css" media="all">
+<link rel="stylesheet" id="oe-widgets-style-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/A.widgets.css,qver=4.9.16.pagespeed.cf.bX_BAF_dOC.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./Policy &amp; Practice Interventions – Michelle Zhu_files/css(2)" type="text/css" media="all">
+<!--n2css--><script type="text/javascript" src="./Policy &amp; Practice Interventions – Michelle Zhu_files/jquery.js,qver=1.12.4.pagespeed.jm.gp20iU5FlU.js"></script>
+<script src="./Policy &amp; Practice Interventions – Michelle Zhu_files/wp-includes,_js,_jquery,_jquery-migrate.min.js,qver==1.4.1+wp-content,_plugins,_responsive-lightbox,_assets,_magnific,_jquery.magnific-popup.min.js,qver==2.0.5+wp-content,_plugins,_responsive-lightbox,_assets,_infinitescroll,_infinite-scroll.pkgd.min.j.js"></script><script>eval(mod_pagespeed_mUhmJEi5Tr);</script>
+<script>eval(mod_pagespeed_vghKAQJFB1);</script>
+<script>eval(mod_pagespeed_mNZykWI3vb);</script>
+<script type="text/javascript">//<![CDATA[
+var rlArgs={"script":"magnific","selector":"lightbox","customEvents":"","activeGalleries":"0","disableOn":"768","midClick":"1","preloader":"1","closeOnContentClick":"1","closeOnBgClick":"1","closeBtnInside":"1","showCloseBtn":"1","enableEscapeKey":"1","alignTop":"","fixedContentPos":"auto","fixedBgPos":"auto","autoFocusLast":"1","woocommerce_gallery":"0","ajaxurl":"http:\/\/www.michellezhu.co\/wp-admin\/admin-ajax.php","nonce":"99deaf54f5"};
+//]]></script>
+<script src="./Policy &amp; Practice Interventions – Michelle Zhu_files/responsive-lightbox,_js,_front.js,qver==2.0.5+ocean-extra,_,_includes,_widgets,_js,_mailchimp.min.js,qver==4.9.16+ocean-extra,_,_includes,_widgets,_js,_share.min.js,qver==4.9.16.pagespeed.jc.iWREEf8K4i.js"></script><script>eval(mod_pagespeed_7C_Ybf0FP2);</script>
+<script>eval(mod_pagespeed_X$3J35Wnl9);</script>
+<script>eval(mod_pagespeed_21fwhyy0vl);</script>
+<link rel="https://api.w.org/" href="http://www.michellezhu.co/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.michellezhu.co/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.michellezhu.co/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.16">
+<link rel="canonical" href="http://www.michellezhu.co/bgh-policy-practice-interventions/">
+<link rel="shortlink" href="http://www.michellezhu.co/?p=1320">
+<link rel="alternate" type="application/json+oembed" href="http://www.michellezhu.co/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.michellezhu.co%2Fbgh-policy-practice-interventions%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.michellezhu.co/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.michellezhu.co%2Fbgh-policy-practice-interventions%2F&amp;format=xml">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACVklEQVRYhe2SW0gUYRiGn3+dhNyY1iU2DaFQ6cIbhQ4blp0QKZK6KyIoDUKSCMKErECkvEqT0OhkkJKHLqSwEF2WogOhECUZS8ZSBBHLBB7W9qZsvi484A677t6EEPNezf/Nw8sz3/xgx46dJY4CmPbrF4FNAEcq3zMx6ZkHbjZsC2dlBgsDo95V97rPjwVGN6cKrAC+KegTuOIznMZvv54FVAN7gl/yM9oe1ITfjexABB0wgKdAk89wflwooM1oKC9QGsswxfGHR30V3O2sRcSho2atIQ/IQ+Ro5+kL9dBcp5Ry9fYf5879OkxT02eqAdCBXETKSjyRcp/h7JzrdyRa0fCHIlo7ahGJjSqlPL39J65N/XS7Xg6Wcqv9MqapxS5TKhVoK/FEtkRvYJF0PTyT0HN80kNHz1leDZUyv584UUppItIIbCVhMzA2nomIfNpY4K9qbykwWpu8HDtUj6b9iuKe+Mpn7o7IhNsVqr7dWDjc3lJA1clTuFYaVonCEk8kNykBETEUqqh+YP9Vd3pob+bqr9MHD7RQWVZj/TYQMQX2dY1mN6zJ+LzLnR76vruoh0vnDuNwTFurtycloKB5wEgzAJYVh9+K4AMo3tmNS/8RLQv9PsP5epadAG4AZK8NsCH/mbU3J7kNwAvL6A1AisMkZ92IFX8eiwVYnz0c3atwJSUAhBYelGJy7jktbWpRFgjPs8uj2bmrmvgXKGVaJovBZvx3scfJbOCfxhawBWyBJRfQAETkulLqcRzGsJz9QEVsVAYtg2A8VoRA0pZ27PzX+QtKAMPzExriiAAAAABJRU5ErkJggg==" sizes="32x32">
+<link rel="icon" href="http://www.michellezhu.co/wp-content/uploads/2018/07/xcropped-micon3-03-192x192.png.pagespeed.ic.g6ZtXOBTeI.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://www.michellezhu.co/wp-content/uploads/2018/07/xcropped-micon3-03-180x180.png.pagespeed.ic.sSZ8mIzST-.png">
+<meta name="msapplication-TileImage" content="http://www.michellezhu.co/wp-content/uploads/2018/07/cropped-micon3-03-270x270.png">
+		<style type="text/css" id="wp-custom-css">@font-face{font-family:"gill-sans";src:url(‘https://dl.dropboxusercontent.com/s/nv92ix2d8rt4u43/GillSansMTPro-Book.otf)}::selection{background:#f3f3f3;color:inherit}#site-logo a.site-logo-text{font-weight:400}#site-navigation{margin-top:5px}</style>
+	<!-- OceanWP CSS -->
+<style type="text/css">a:hover,a.light:hover,.theme-heading .text::before,#top-bar-content>a:hover,#top-bar-social li.oceanwp-email a:hover,#site-navigation-wrap .dropdown-menu>li>a:hover,#site-header.medium-header #medium-searchform button:hover,.oceanwp-mobile-menu-icon a:hover,.blog-entry.post .blog-entry-header .entry-title a:hover,.blog-entry.post .blog-entry-readmore a:hover,.blog-entry.thumbnail-entry .blog-entry-category a,ul.meta li a:hover,.dropcap,.single nav.post-navigation .nav-links .title,body .related-post-title a:hover,body #wp-calendar caption,body .contact-info-widget.default i,body .contact-info-widget.big-icons i,body .custom-links-widget .oceanwp-custom-links li a:hover,body .custom-links-widget .oceanwp-custom-links li a:hover:before,body .posts-thumbnails-widget li a:hover,body .social-widget li.oceanwp-email a:hover,.comment-author .comment-meta .comment-reply-link,#respond #cancel-comment-reply-link:hover,#footer-widgets .footer-box a:hover,#footer-bottom a:hover,#footer-bottom #footer-bottom-menu a:hover,.sidr a:hover,.sidr-class-dropdown-toggle:hover,.sidr-class-menu-item-has-children.active>a,.sidr-class-menu-item-has-children.active>a>.sidr-class-dropdown-toggle,input[type="checkbox"]:checked:before{color:#999}input[type="button"],input[type="reset"],input[type="submit"],button[type="submit"],.button,#site-navigation-wrap .dropdown-menu>li.btn>a>span,.thumbnail:hover i,.post-quote-content,.omw-modal .omw-close-modal,body .contact-info-widget.big-icons li:hover i{background-color:#999}.widget-title{border-color:#999}blockquote{border-color:#999}#searchform-dropdown{border-color:#999}.dropdown-menu .sub-menu{border-color:#999}.blog-entry.large-entry .blog-entry-readmore a:hover{border-color:#999}.oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#999}.social-widget li.oceanwp-email a:hover{border-color:#999}#respond #cancel-comment-reply-link:hover{border-color:#999}body .contact-info-widget.big-icons li:hover i{border-color:#999}#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#999}input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,button[type="submit"]:hover,input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,button[type="submit"]:focus,.button:hover,#site-navigation-wrap .dropdown-menu>li.btn>a:hover>span,.post-quote-author,.omw-modal .omw-close-modal:hover{background-color:#fcbd0f}a{color:#4717f6}a:hover{color:#9e86f4}.boxed-layout #wrap,.boxed-layout .parallax-footer,.boxed-layout .owp-floating-bar{width:1180px}.boxed-layout{background-color:#fff}@media only screen and (min-width:960px){.content-area,.content-left-sidebar .content-area{width:100%}}.page-header .page-header-title,.page-header.background-image-page-header .page-header-title{color:#000}#scroll-top{border-radius:64px}#top-bar{padding:8px 0 25px 0}#top-bar-wrap{border-color:#fff}#top-bar-wrap,#top-bar-content strong{color:#cecece}#site-header{border-color:#fff}#site-header.has-header-media .overlay-header-media{background-color:rgba(0,0,0,.5)}#site-logo #site-logo-inner a img,#site-header.center-header #site-navigation-wrap .middle-site-logo a img{max-width:100px}#site-logo a.site-logo-text{color:#000}#site-logo a.site-logo-text:hover{color:#4717f6}.effect-one #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-three #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-five #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:before,.effect-five #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-nine #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:before,.effect-nine #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after{background-color:#4717f6}.effect-four #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:before,.effect-four #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-seven #site-navigation-wrap .dropdown-menu>li>a.menu-link:hover>span:after,.effect-seven #site-navigation-wrap .dropdown-menu>li.sfHover>a.menu-link>span:after{color:#4717f6}.effect-seven #site-navigation-wrap .dropdown-menu>li>a.menu-link:hover>span:after,.effect-seven #site-navigation-wrap .dropdown-menu>li.sfHover>a.menu-link>span:after{text-shadow:10px 0 #4717f6,-10px 0 #4717f6}#site-navigation-wrap .dropdown-menu>li>a{padding:0 20px}#site-navigation-wrap .dropdown-menu>li>a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close{color:#000}#site-navigation-wrap .dropdown-menu>li>a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover{color:#4717f6}#site-navigation-wrap .dropdown-menu>.current-menu-item>a,#site-navigation-wrap .dropdown-menu>.current-menu-ancestor>a,#site-navigation-wrap .dropdown-menu>.current-menu-item>a:hover,#site-navigation-wrap .dropdown-menu>.current-menu-ancestor>a:hover{color:#4717f6}.dropdown-menu ul li a.menu-link{color:#000}.dropdown-menu ul li a.menu-link:hover{color:#4717f6}.dropdown-menu ul>.current-menu-item>a.menu-link{color:#4717f6}.navigation li.mega-cat ul li .mega-post-title a{color:#000}.navigation li.mega-cat ul li .mega-post-title a:hover{color:#4717f6}.mobile-menu .hamburger-inner,.mobile-menu .hamburger-inner::before,.mobile-menu .hamburger-inner::after{background-color:#000}#mobile-fullscreen{background-color:#fff}body .sidr a,body .sidr-class-dropdown-toggle,#mobile-dropdown ul li a,#mobile-dropdown ul li a .dropdown-toggle,#mobile-fullscreen ul li a,#mobile-fullscreen .oceanwp-social-menu.simple-social ul li a{color:#000}#mobile-fullscreen a.close .close-icon-inner,#mobile-fullscreen a.close .close-icon-inner::after{background-color:#000}body .sidr a:hover,body .sidr-class-dropdown-toggle:hover,body .sidr-class-dropdown-toggle .fa,body .sidr-class-menu-item-has-children.active>a,body .sidr-class-menu-item-has-children.active>a>.sidr-class-dropdown-toggle,#mobile-dropdown ul li a:hover,#mobile-dropdown ul li a .dropdown-toggle:hover,#mobile-dropdown .menu-item-has-children.active>a,#mobile-dropdown .menu-item-has-children.active>a>.dropdown-toggle,#mobile-fullscreen ul li a:hover,#mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover{color:#4717f6}#mobile-fullscreen a.close:hover .close-icon-inner,#mobile-fullscreen a.close:hover .close-icon-inner::after{background-color:#4717f6}.sidr-class-mobile-searchform button,#mobile-dropdown #mobile-menu-search form button{color:#000}.sidr-class-mobile-searchform button:hover,#mobile-dropdown #mobile-menu-search form button:hover{color:#4717f6}#footer-widgets{background-color:#fff}#footer-bottom{background-color:#fff}#footer-bottom,#footer-bottom p{color:#000}body{font-family:Libre\ Franklin;font-weight:400;font-size:16px;color:#000;letter-spacing:.5px}h1,h2,h3,h4,h5,h6,.theme-heading,.widget-title,.oceanwp-widget-recent-posts-title,.comment-reply-title,.entry-title,.sidebar-box .widget-title{font-family:Poppins;font-weight:700;color:#000;letter-spacing:2.5px;text-transform:uppercase}@media (max-width:480px){h1,h2,h3,h4,h5,h6,.theme-heading,.widget-title,.oceanwp-widget-recent-posts-title,.comment-reply-title,.entry-title,.sidebar-box .widget-title{line-height:1.4;letter-spacing:2.5px}}#site-logo a.site-logo-text{font-family:Poppins;font-weight:600;font-size:36px;letter-spacing:5px;text-transform:uppercase}@media (max-width:480px){#site-logo a.site-logo-text{font-size:26px}}#site-navigation-wrap .dropdown-menu>li>a,#site-header.full_screen-header .fs-dropdown-menu>li>a,#site-header.top-header #site-navigation-wrap .dropdown-menu>li>a,#site-header.center-header #site-navigation-wrap .dropdown-menu>li>a,#site-header.medium-header #site-navigation-wrap .dropdown-menu>li>a,.oceanwp-mobile-menu-icon a{font-family:Poppins;font-weight:600;font-size:18px;letter-spacing:2px;text-transform:uppercase}.sidr-class-dropdown-menu li a,a.sidr-class-toggle-sidr-close,#mobile-dropdown ul li a,body #mobile-fullscreen ul li a{font-family:Poppins;text-transform:uppercase}@media (max-width:768px){.sidr-class-dropdown-menu li a,a.sidr-class-toggle-sidr-close,#mobile-dropdown ul li a,body #mobile-fullscreen ul li a{letter-spacing:3.9px}}.page-header .page-header-title,.page-header.background-image-page-header .page-header-title{font-family:Poppins;font-weight:400;letter-spacing:4px}.blog-entry.post .blog-entry-header .entry-title a{font-weight:600;color:#000;letter-spacing:2px}#footer-bottom #copyright{font-family:Poppins;font-weight:500;font-size:14px;letter-spacing:3.3px;text-transform:uppercase}</style>	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><link href="chrome-extension://cjdnfmjmdligcpfcekfmenlhiopehjkd/web_resources/modal/modal.css" rel="stylesheet" id="__tmpStyle"></head>
+<body class="page-template page-template-elementor_canvas page page-id-1320 wp-custom-logo no-lightbox no-carousel oceanwp-theme fullscreen-mobile boxed-layout default-breakpoint content-full-width content-max-width has-topbar page-header-disabled has-blog-grid elementor-default elementor-template-canvas elementor-page elementor-page-1320" data-elementor-device-mode="desktop" style="">
+			<div data-elementor-type="post" data-elementor-id="1320" class="elementor elementor-1320" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-4ea762c2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="4ea762c2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-1cb0167b elementor-column elementor-col-16 elementor-top-column" data-id="1cb0167b" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-a1607c9 elementor-column elementor-col-16 elementor-top-column" data-id="a1607c9" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1c33cfc0 elementor-widget elementor-widget-menu-anchor" data-id="1c33cfc0" data-element_type="widget" data-widget_type="menu-anchor.default">
+				<div class="elementor-widget-container">
+					<div id="top" class="elementor-menu-anchor"></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1642833 elementor-align-center elementor-widget elementor-widget-button" data-id="1642833" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://www.michellezhu.co/bgh/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">HOME</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-2170420f elementor-column elementor-col-16 elementor-top-column" data-id="2170420f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-50887149 elementor-align-center elementor-widget elementor-widget-button" data-id="50887149" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://www.michellezhu.co/bgh-the-syrian-conflict/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">SYRIAN CONFLICT</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-66faba14 elementor-column elementor-col-16 elementor-top-column" data-id="66faba14" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7e09e966 elementor-align-center elementor-widget elementor-widget-button" data-id="7e09e966" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://www.michellezhu.co/bgh-mental-health-refugee-children/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">MENTAL HEALTH</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-6cb74086 elementor-column elementor-col-16 elementor-top-column" data-id="6cb74086" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5e6b17da elementor-align-center elementor-widget elementor-widget-button" data-id="5e6b17da" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://www.michellezhu.co/bgh-policy-practice-interventions/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">INTERVENTIONS</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-50bc8187 elementor-column elementor-col-16 elementor-top-column" data-id="50bc8187" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-641e05c7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="641e05c7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3248310c elementor-column elementor-col-100 elementor-top-column" data-id="3248310c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6bfa60a7 elementor-widget elementor-widget-menu-anchor" data-id="6bfa60a7" data-element_type="widget" data-widget_type="menu-anchor.default">
+				<div class="elementor-widget-container">
+					<div id="issue" class="elementor-menu-anchor"></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-56c5b297 elementor-widget elementor-widget-spacer" data-id="56c5b297" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-2254a196 elementor-widget elementor-widget-heading" data-id="2254a196" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">MENTAL HEALTH INTERVENTIONS FOR REFUGEE CHILDREN</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-40257275 elementor-widget elementor-widget-spacer" data-id="40257275" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-64520a3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="64520a3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3c8c493 elementor-column elementor-col-33 elementor-top-column" data-id="3c8c493" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-97e675f elementor-widget elementor-widget-heading" data-id="97e675f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">What are the major mental health care challenges for Syrian refugees?</h1>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-65e0e87 elementor-column elementor-col-33 elementor-top-column" data-id="65e0e87" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7abd50f eael-flipbox-content-align-center elementor-widget elementor-widget-eael-flip-box" data-id="7abd50f" data-element_type="widget" data-widget_type="eael-flip-box.default">
+				<div class="elementor-widget-container">
+			
+	<div class="eael-elements-flip-box-container eael-animate-flip eael-animate-left">
+
+	    <div class="eael-elements-flip-box-flip-card">
+	        <div class="eael-elements-flip-box-front-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                        <div class="eael-elements-flip-box-icon-image">
+																	<i class=""></i>
+									                        </div>
+	                        <h2 class="eael-elements-flip-box-heading">Language Barriers</h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+
+	        <div class="eael-elements-flip-box-rear-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                    	
+	                        <h2 class="eael-elements-flip-box-heading"></h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p><p>Lack of Arabic-speaking health providers and interpreters inhibits access [1]; inability to communicate complicates treatment and assessment.</p><p></p>
+	                        </div>
+
+	                        	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+			</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-b33ca75 elementor-column elementor-col-33 elementor-top-column" data-id="b33ca75" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bfb402e eael-flipbox-content-align-center elementor-widget elementor-widget-eael-flip-box" data-id="bfb402e" data-element_type="widget" data-widget_type="eael-flip-box.default">
+				<div class="elementor-widget-container">
+			
+	<div class="eael-elements-flip-box-container eael-animate-flip eael-animate-left">
+
+	    <div class="eael-elements-flip-box-flip-card">
+	        <div class="eael-elements-flip-box-front-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                        <div class="eael-elements-flip-box-icon-image">
+																	<i class=""></i>
+									                        </div>
+	                        <h2 class="eael-elements-flip-box-heading">Belief Systems</h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+
+	        <div class="eael-elements-flip-box-rear-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                    	
+	                        <h2 class="eael-elements-flip-box-heading"></h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p><p>Culture is a major determinant of how individuals evaluate and and react to distress [2]. Ex. many refugees use&nbsp;<span style="font-weight: 400;">religion, prayer, family, and social relationships as coping strategies.</span></p><p></p>
+	                        </div>
+
+	                        	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+			</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-68688e7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="68688e7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-92b44ab elementor-column elementor-col-33 elementor-top-column" data-id="92b44ab" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-327e3f0 eael-flipbox-content-align-center elementor-widget elementor-widget-eael-flip-box" data-id="327e3f0" data-element_type="widget" data-widget_type="eael-flip-box.default">
+				<div class="elementor-widget-container">
+			
+	<div class="eael-elements-flip-box-container eael-animate-flip eael-animate-left">
+
+	    <div class="eael-elements-flip-box-flip-card">
+	        <div class="eael-elements-flip-box-front-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                        <div class="eael-elements-flip-box-icon-image">
+																	<i class=""></i>
+									                        </div>
+	                        <h2 class="eael-elements-flip-box-heading">Cultural Stigma</h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+
+	        <div class="eael-elements-flip-box-rear-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                    	
+	                        <h2 class="eael-elements-flip-box-heading"></h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p><p>Mental health is considered a taboo topic; this affects whether refugees accept mental health diagnoses and the subsequent treatment [1,3].</p><p></p>
+	                        </div>
+
+	                        	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+			</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-1ec0bd7 elementor-column elementor-col-33 elementor-top-column" data-id="1ec0bd7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e4aa299 eael-flipbox-content-align-center elementor-widget elementor-widget-eael-flip-box" data-id="e4aa299" data-element_type="widget" data-widget_type="eael-flip-box.default">
+				<div class="elementor-widget-container">
+			
+	<div class="eael-elements-flip-box-container eael-animate-flip eael-animate-left">
+
+	    <div class="eael-elements-flip-box-flip-card">
+	        <div class="eael-elements-flip-box-front-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                        <div class="eael-elements-flip-box-icon-image">
+																	<i class=""></i>
+									                        </div>
+	                        <h2 class="eael-elements-flip-box-heading">Access to Specialists</h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+
+	        <div class="eael-elements-flip-box-rear-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                    	
+	                        <h2 class="eael-elements-flip-box-heading"></h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p><p>Shortage of mental health specialists for refugees: in Germany, only 5% of refugees in need of mental health services received treatment in 2015 [12].</p><p></p>
+	                        </div>
+
+	                        	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+			</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-153071d elementor-column elementor-col-33 elementor-top-column" data-id="153071d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b52c6a8 eael-flipbox-content-align-center elementor-widget elementor-widget-eael-flip-box" data-id="b52c6a8" data-element_type="widget" data-widget_type="eael-flip-box.default">
+				<div class="elementor-widget-container">
+			
+	<div class="eael-elements-flip-box-container eael-animate-flip eael-animate-left">
+
+	    <div class="eael-elements-flip-box-flip-card">
+	        <div class="eael-elements-flip-box-front-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                        <div class="eael-elements-flip-box-icon-image">
+																	<i class=""></i>
+									                        </div>
+	                        <h2 class="eael-elements-flip-box-heading">Establishing Trust</h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+
+	        <div class="eael-elements-flip-box-rear-container">
+	            <div class="eael-elements-slider-display-table">
+	                <div class="eael-elements-flip-box-vertical-align">
+	                    <div class="eael-elements-flip-box-padding">
+	                    	
+	                        <h2 class="eael-elements-flip-box-heading"></h2>
+	                        <div class="eael-elements-flip-box-content">
+	                           <p></p><p>After decades of widespread corruption and oppression in Syria, many refugees do not easily trust formal services and establishments and therefore do not seek out mental health resources when they need it [8].</p><p></p>
+	                        </div>
+
+	                        	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+			</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-2b2dbd1 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2b2dbd1" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-967be96 elementor-column elementor-col-50 elementor-top-column" data-id="967be96" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0e1c363 elementor-widget elementor-widget-heading" data-id="0e1c363" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">Community-based approaches</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-c37310b elementor-widget elementor-widget-text-editor" data-id="c37310b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>In many cases, Syrian refugees have been isolated from family, friends, support groups, and communities that they normally turn to in order to cope with traumatic experiences. Mental health support therefore needs to go beyond clinical treatment and enhance community support networks [4].</p><p>A community-based approach that touches on multiple access points in schools, community, centers, and health clinics, offers stronger support for refugee children than individual-centered approaches in typical therapy methods [5]. Given that the mental health of caregivers has been shown to influence the mental health of children [15], family-level considerations are also important.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-74723fd elementor-column elementor-col-50 elementor-top-column" data-id="74723fd" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-163b21e elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="163b21e" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}" style="width: 1280px; left: 0px;">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-67230de elementor-column elementor-col-33 elementor-top-column" data-id="67230de" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-3d2bbe5 elementor-column elementor-col-33 elementor-top-column" data-id="3d2bbe5" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0cda70a elementor-aspect-ratio-169 elementor-widget elementor-widget-video" data-id="0cda70a" data-element_type="widget" data-settings="{&quot;aspect_ratio&quot;:&quot;169&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-wrapper elementor-fit-aspect-ratio elementor-open-inline">
+			<iframe class="elementor-video-iframe" allowfullscreen="" src="./Policy &amp; Practice Interventions – Michelle Zhu_files/raBmMbBypkA.html"></iframe>		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-7777af0 elementor-column elementor-col-33 elementor-top-column" data-id="7777af0" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-dd99277 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="dd99277" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-66e03a7 elementor-column elementor-col-100 elementor-top-column" data-id="66e03a7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5f5b6f8 elementor-widget elementor-widget-heading" data-id="5f5b6f8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">Syria Bright Future: A Model for Mental Health Interventions</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-c8dd7fe elementor-widget elementor-widget-text-editor" data-id="c8dd7fe" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Founded by Syrian refugee Mohammad Abo-Hilal, a psychiatrist, Syria Bright Future (SBF) address the mental health, social, and educational needs of refugee children in Jordan. The organization consists of a team of mental health professionals and trained community volunteers that teaches kids how to cope with PTSD, offers creative educational activities, and provides counseling and support to caregivers. The teams also visit individual families for interviews with each member to thoroughly assess their specific mental, physical, social, and educational needs [7, 8]. Syrian cultural norms are also taken into account with the inclusion of traditional spiritual healers [7].&nbsp;</p>
+<p>Thus, SBF improves access to trusted, mental health care services that are individualized, multifaceted, culturally-sensitive, and rooted within the immediate refugee community [7] as well as serves as a model for other countries or organizations to integrate many areas of health services for children and families.&nbsp;</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-61edff2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="61edff2" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4636e57 elementor-column elementor-col-50 elementor-top-column" data-id="4636e57" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-9bcc70d elementor-widget elementor-widget-heading" data-id="9bcc70d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">Policy-level considerations</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-24bd0f2 elementor-widget elementor-widget-text-editor" data-id="24bd0f2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><ul><li>Better integration of mental health strategies for refugee children into <strong>schools.</strong><ul><li><strong>Mental health programs</strong> developed and delivered through schools, which refugee children tend to prefer over traditional services [9].</li><li>More <strong>language acquisition opportunities</strong> in schools would enhance children’s ability to reach out to health services and improve social interactions within host culture [10].</li></ul></li><li>Include mental health care into <strong>basic refugee health services</strong> upon arrival in host country [1, 11].</li><li>Implement more <strong>training programs for mental health professionals</strong> to promote better understanding of and more culturally-appropriate treatment methods for refugee groups [1].</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-da1ed71 elementor-column elementor-col-50 elementor-top-column" data-id="da1ed71" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6064ff0 elementor-widget elementor-widget-image" data-id="6064ff0" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<script pagespeed_no_defer="">//<![CDATA[
+(function(){var g=this,h=function(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};var l=function(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};var m=function(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n,p=function(b,d,a,c,e){this.f=b;this.h=d;this.i=a;this.c=e;this.e={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.g=c;this.b={};this.a=[];this.d={}},q=function(b,d){var a,c,e=d.getAttribute("pagespeed_url_hash");if(a=e&&!(e in b.d))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.e.height&&c<=b.e.width)}a&&(b.a.push(e),b.d[e]=!0)};p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});var r=function(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.i;b.c&&(a+="&n="+b.c);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.g&&(e="&rd="+encodeURIComponent(JSON.stringify(s())),131072>=a.length+e.length&&(a+=e),d=!0);t=a;if(d){c=b.f;b=b.h;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(u){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}},s=function(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("pagespeed_url_hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].k&&a.height>=b[e].j)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b},t="";h("pagespeed.CriticalImages.getBeaconData",function(){return t});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','http://www.michellezhu.co/bgh-policy-practice-interventions/','YddRYU7ik1',true,false,'fcZYcpwRzV8');
+//]]></script><img width="1024" height="681" src="./Policy &amp; Practice Interventions – Michelle Zhu_files/1024x681xclassroom-kids-1024x681.jpg.pagespeed.ic.cleztNKxmm.webp" class="attachment-large size-large" alt="" srcset="http://www.michellezhu.co/wp-content/uploads/2019/05/classroom-kids-1024x681.jpg 1024w, http://www.michellezhu.co/wp-content/uploads/2019/05/classroom-kids-300x200.jpg 300w, http://www.michellezhu.co/wp-content/uploads/2019/05/classroom-kids-768x511.jpg 768w, http://www.michellezhu.co/wp-content/uploads/2019/05/classroom-kids.jpg 1500w" sizes="(max-width: 1024px) 100vw, 1024px" pagespeed_url_hash="205827679" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">											<figcaption class="widget-image-caption wp-caption-text">[13]</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-c3dead1 elementor-widget elementor-widget-image" data-id="c3dead1" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="1024" height="683" src="./Policy &amp; Practice Interventions – Michelle Zhu_files/1024x683ximg3-1024x683.jpg.pagespeed.ic.iAjchxu5oB.webp" class="attachment-large size-large" alt="" srcset="http://www.michellezhu.co/wp-content/uploads/2019/05/img3-1024x683.jpg 1024w, http://www.michellezhu.co/wp-content/uploads/2019/05/img3-300x200.jpg 300w, http://www.michellezhu.co/wp-content/uploads/2019/05/img3-768x512.jpg 768w, http://www.michellezhu.co/wp-content/uploads/2019/05/img3.jpg 1280w" sizes="(max-width: 1024px) 100vw, 1024px" pagespeed_url_hash="1913602740" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">											<figcaption class="widget-image-caption wp-caption-text">Samira, 5, (in red) is learning to count in English and Arabic [14].</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3f8a6e7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3f8a6e7" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-5e11d0a elementor-column elementor-col-50 elementor-top-column" data-id="5e11d0a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7764e2f elementor-widget elementor-widget-text-editor" data-id="7764e2f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>With interventions oriented around family and community, policies and healthcare practitioners in host countries should aim to instill a greater sense of stability, belonging, and hope in displaced Syrian refugee children.</p><p>By uniting communities and healing Syria’s next generation, we can offer refugee children and their families a path out of the relentless horror and violence of the Syrian conflict and into a brighter future.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-5c5807d elementor-column elementor-col-50 elementor-top-column" data-id="5c5807d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-39efb46 elementor-align-right elementor-widget elementor-widget-button" data-id="39efb46" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://www.michellezhu.co/bgh/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i class="fa fa-angle-right" aria-hidden="true"></i>
+			</span>
+						<span class="elementor-button-text">HOME</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-8f463d4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="8f463d4" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-85ddbfb elementor-column elementor-col-50 elementor-top-column" data-id="85ddbfb" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ec0271c elementor-widget elementor-widget-text-editor" data-id="ec0271c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>References:</p><ol><li>Giacco, D., &amp; Priebe, S. (2015). WHO Europe policy brief on migration and health: mental health care for refugees. World Health Organization Regional Office for Europe. Retrieved from http://www. euro. who. int/__data/assets/pdf_file/0006/293271/Policy-Brief-Migration-Health-Mental-Health-Care-Refugees.pdf.</li><li>Cetrez, Ö., &amp; Balkir, N. (2017). Resilience and Mental Health Risks among Syrian Refugees in Europe: A Cultural Perspective. <em>ACTA PSYCHOPATHOLOGICA, 5</em>(5), 1-4.</li><li>Abo-Hilal, M., &amp; Hoogstad, M. (2013). Syrian mental health professionals as refugees in Jordan: establishing mental health services for fellow refugees. <em>Intervention, 11</em>(1), 89-93.</li><li>Abou-Saleh, M. T., &amp; Hughes, P. (2015). Mental health of Syrian refugees: looking backwards and forwards. <em>The Lancet Psychiatry, 2</em>(10), 870-871.</li><li>Fondacaro, K. M., &amp; Harder, V. S. (2014). Connecting cultures: A training model promoting evidence-based psychological services for refugees. <em>Training and education in professional psychology, 8</em>(4), 320.</li><li>Abou-Saleh, M. T., &amp; Hughes, P. (2015). Mental health of Syrian refugees: looking backwards and forwards. <em>The Lancet Psychiatry, 2</em>(10), 870-871.</li><li>Sirin, S. R., &amp; Rogers-Sirin, L. (2015). <em>The educational and mental health needs of Syrian refugee children. </em>Washington, DC: Migration Policy Institute.</li><li>Abo-Hilal, M., &amp; Hoogstad, M. (2013). Syrian mental health professionals as refugees in Jordan: establishing mental health services for fellow refugees. <em>Intervention, 11</em>(1), 89-93.</li><li>Fazel, M., Garcia, J., &amp; Stein, A. (2016). The right location? Experiences of refugee adolescents seen by school-based mental health services. <em>Clinical Child Psychology and Psychiatry, 21</em>, 368–380.</li><li>Fazel, M., &amp; Betancourt, T. S. (2018). Preventive mental health interventions for refugee children and adolescents in high-income settings. <em>The Lancet Child &amp; Adolescent Health, 2</em>(2), 121-132.</li><li>Hodes, M., &amp; Vostanis, P. (2018). Practitioner Review: Mental health problems of refugee children and adolescents and their management. <em>Journal of child psychology and psychiatry</em>.</li><li>Sleijpen M., Boeije H. R., Kleber R. J., &amp; Mooren T. (2015). Between power and powerlessness: a meta-ethnography of sources of resilience in young refugees. <em>Ethnicity &amp; Health, 21</em>, 158-180.</li><li>(2018). [Photograph]. Retrieved from https://www.georgetownjournalofinternationalaffairs.org/online-edition/2018/4/20/europes-great-challenge-integrating-syrian-refugees.</li><li>Warren, J. (2016). <i>Samira, 5, (in red) is learning to count in English and Arabic.</i>[Photograph]. Retrieved from https://www.worldvision.org/refugees-news-stories/photos-syrian-refugee-children.</li><li>Panter‐Brick, C., Grimon, M. P., &amp; Eggerman, M. (2014). Caregiver—Child mental health: A prospective study in conflict and refugee settings. <em>Journal of Child Psychology and Psychiatry, 55</em>(4), 313-327.</li></ol></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-5597287 elementor-column elementor-col-50 elementor-top-column" data-id="5597287" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-425a1cd8 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="425a1cd8" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-77aad4da elementor-column elementor-col-100 elementor-top-column" data-id="77aad4da" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-4079578a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="4079578a" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-5c8694c5 elementor-column elementor-col-33 elementor-inner-column" data-id="5c8694c5" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-178173d5 elementor-widget elementor-widget-heading" data-id="178173d5" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<p class="elementor-heading-title elementor-size-default">Biology of Global Health Final Project</p>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-e03d7fc elementor-column elementor-col-33 elementor-inner-column" data-id="e03d7fc" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-2a694de elementor-column elementor-col-33 elementor-inner-column" data-id="2a694de" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-747d775b elementor-widget elementor-widget-heading" data-id="747d775b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<p class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/">Michelle Zhu © 2019</a></p>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-56c71e81 elementor-view-framed elementor-fixed elementor-shape-circle elementor-widget elementor-widget-icon" data-id="56c71e81" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;fixed&quot;}" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<a class="elementor-icon" href="http://www.michellezhu.co/bgh-policy-practice-interventions/#top">
+				<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+			</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		<script type="text/javascript">//<![CDATA[
+var localize={"ajaxurl":"http:\/\/www.michellezhu.co\/wp-admin\/admin-ajax.php","nonce":"4765c41967"};
+//]]></script>
+<script src="./Policy &amp; Practice Interventions – Michelle Zhu_files/wp-content,_essential-addons-elementor,_eael-post-1320.min.js,qver==3.1.0+wp-includes,_js,_imagesloaded.min.js,qver==3.2.0.pagespeed.jc.JkhevkheX4.js"></script><script>eval(mod_pagespeed_Dd2jNGCsWJ);</script>
+<script>eval(mod_pagespeed_Che1xByOQs);</script>
+<script type="text/javascript">//<![CDATA[
+var oceanwpLocalize={"isRTL":"","menuSearchStyle":"disabled","sidrSource":null,"sidrDisplace":"","sidrSide":"left","sidrDropdownTarget":"link","verticalHeaderTarget":"icon","customSelects":".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select","ajax_url":"http:\/\/www.michellezhu.co\/wp-admin\/admin-ajax.php","stickElements":""};
+//]]></script>
+<script type="text/javascript" src="./Policy &amp; Practice Interventions – Michelle Zhu_files/main-scripts.js,qver=1.5.20.pagespeed.jm.wwFbay6JGl.js"></script>
+<script src="./Policy &amp; Practice Interventions – Michelle Zhu_files/wp-content,_plugins,_ocean-stick-anything,_assets,_js,_sticky-kit.min.js,qver==1.0.2+wp-content,_plugins,_ocean-stick-anything,_assets,_js,_main.min.js,qver==1.0.2+wp-includes,_js,_wp-embed.min.js,qver==4.9.16.pagespeed.jc.iZ5Kjflug0.js"></script><script>eval(mod_pagespeed_n0uLN7369D);</script>
+<script>eval(mod_pagespeed_Refis8hT10);</script>
+<script>eval(mod_pagespeed_ZxuariynXm);</script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.michellezhu.co/wp-content/themes/oceanwp/assets/js//third/html5.min.js?ver=1.5.20'></script>
+<![endif]-->
+<script src="./Policy &amp; Practice Interventions – Michelle Zhu_files/wp-content,_plugins,_elementor,_assets,_js,_frontend-modules.min.js,qver==2.5.14+wp-includes,_js,_jquery,_ui,_position.min.js,qver==1.11.4+wp-content,_plugins,_elementor,_assets,_lib,_dialog,_dialog.min.js,qver==4.7.1+wp-content,_plugins,_elementor,_as.js"></script><script>eval(mod_pagespeed_zOzQyB2Yve);</script>
+<script>eval(mod_pagespeed_BaeQKFX3LB);</script>
+<script>eval(mod_pagespeed_aNpbSAmXvf);</script>
+<script>eval(mod_pagespeed_BELEYttzmd);</script>
+<script type="text/javascript" src="./Policy &amp; Practice Interventions – Michelle Zhu_files/swiper.min.js,qver=4.4.6.pagespeed.jm.b6eRSjZRcI.js"></script>
+<script type="text/javascript">var elementorFrontendConfig={"environmentMode":{"edit":false,"wpPreview":false},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.5.14","urls":{"assets":"http:\/\/www.michellezhu.co\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_enable_lightbox_in_editor":"yes"}},"post":{"id":1320,"title":"Policy & Practice Interventions","excerpt":""}};</script>
+<script type="text/javascript" src="./Policy &amp; Practice Interventions – Michelle Zhu_files/frontend.min.js,qver=2.5.14.pagespeed.jm.CXF08DUeDh.js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+	
+
+<div>
+    <div id="twoseven-ext-tab-media-modal" class="twoseven-ext-tab-media-modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="twoseven-ext-tab-media-modal-content">
+        <div class="iframe-container" style="height: 100%; width: 100%;">
+          <span class="close">×</span>
+        </div>
+      </div>
+    </div></div></body></html>

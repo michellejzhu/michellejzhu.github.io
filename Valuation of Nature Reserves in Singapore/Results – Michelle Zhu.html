@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://www.michellezhu.co/urban-ecology-results/ -->
+<html lang="en-US"><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;"><script type="text/javascript" id="__tmpScript-858217741" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-862920266" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-317876021" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-548411131" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-331287805" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-492294508" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-625254338" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-647441087" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-917873732" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-939673393" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-382612405" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-714041251" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-920812992" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-917425837" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-813879706" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-912404277" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-166607865" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-673859052" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-540304087" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-12407839" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-576008928" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-654479291" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-588240103" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-510012352" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-455142542" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-66385138" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-281662127" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-212616852" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-198531544" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-710630022" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-368982535" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-27379384" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-785773344" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-494240485" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-252074356" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-438726700" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-929505451" data-added-by-two-seven="1">(function() {
+        
+      const modal = document.querySelector('.twoseven-ext-tab-media-modal')
+      const modalCloseBtn = modal.querySelector('.close')
+      function closeModal () {
+        modal.style.display = 'none'
+        const frame = document.querySelector('#twoseven-ext-tab-media-iframe').contentWindow
+        frame.postMessage({
+          __evt_name: 'modal-hide'
+        }, '*')
+      }
+      modalCloseBtn.onclick = closeModal
+
+      window.onmessage = function (e) {
+        if (e.data.__evt_name === 'modal-hide') {
+          closeModal()
+        }
+      }
+
+      window.twoseven.closeTabMediaModal = closeModal
+
+      window.onclick = function (e) {
+        if (e.target.id === 'twoseven-ext-tab-media-modal' && modal.style.display === 'block') {
+            closeModal()
+        }
+      }
+    ;
+      })();</script></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<title>Results – Michelle Zhu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Michelle Zhu » Feed" href="http://www.michellezhu.co/feed/">
+<link rel="alternate" type="application/rss+xml" title="Michelle Zhu » Comments Feed" href="http://www.michellezhu.co/comments/feed/">
+		<script type="text/javascript">window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.michellezhu.co\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.16"}};!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);</script><script src="./Results – Michelle Zhu_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
+<link rel="stylesheet" id="responsive-lightbox-magnific-css" href="./Results – Michelle Zhu_files/magnific-popup.min.css,qver=2.0.5.pagespeed.ce.HO2tt5Y73k.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Results – Michelle Zhu_files/A.font-awesome.min.css,qver=4.7.0.pagespeed.cf.EKo2ymeJf4.css" type="text/css" media="all">
+<link rel="stylesheet" id="simple-line-icons-css" href="./Results – Michelle Zhu_files/simple-line-icons.min.css,qver=2.4.0.pagespeed.ce.7-gh9zP_1g.css" type="text/css" media="all">
+<link rel="stylesheet" id="oceanwp-style-css" href="./Results – Michelle Zhu_files/A.main-style.css,qver=1.5.20.pagespeed.cf.YwtaIMlAtb.css" type="text/css" media="all">
+<style id="oceanwp-hamburgers-css" media="all">.hamburger{display:inline-block;cursor:pointer;transition-property:opacity,filter;transition-duration:.15s;transition-timing-function:linear;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible}a:hover .hamburger{opacity:.7}.hamburger-box{width:20px;height:16px;display:inline-block;position:relative}.hamburger-inner{display:block;top:50%;margin-top:2px}.hamburger-inner,.hamburger-inner::after,.hamburger-inner::before{width:20px;height:2px;background-color:#000;border-radius:3px;position:absolute;transition-property:transform;transition-duration:.15s;transition-timing-function:ease}.hamburger-inner::after,.hamburger-inner::before{content:"";display:block}.hamburger-inner::before{top:-7px}.hamburger-inner::after{bottom:-7px}</style>
+<style id="oceanwp-squeeze-css" media="all">.hamburger--squeeze .hamburger-inner{-webkit-transition-duration:.075s;transition-duration:.075s;-webkit-transition-timing-function:cubic-bezier(.55,.055,.675,.19);transition-timing-function:cubic-bezier(.55,.055,.675,.19)}.hamburger--squeeze .hamburger-inner::before{-webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;transition: top 0.075s 0.12s ease, opacity 0.075s ease}.hamburger--squeeze .hamburger-inner::after{-webkit-transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19)}.hamburger--squeeze.is-active .hamburger-inner{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);-webkit-transition-delay:.12s;transition-delay:.12s;-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1);transition-timing-function:cubic-bezier(.215,.61,.355,1)}.hamburger--squeeze.is-active .hamburger-inner::before{top:0;opacity:0;-webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;transition: top 0.075s ease, opacity 0.075s 0.12s ease}.hamburger--squeeze.is-active .hamburger-inner::after{bottom:0;-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transition: bottom 0.075s ease, -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1)}</style>
+<link rel="stylesheet" id="oceanwp-google-font-libre-franklin-css" href="./Results – Michelle Zhu_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="oceanwp-google-font-poppins-css" href="./Results – Michelle Zhu_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Results – Michelle Zhu_files/A.elementor-icons.min.css,qver=4.3.0.pagespeed.cf.CPPBKWyAbR.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="./Results – Michelle Zhu_files/A.animations.min.css,qver=2.5.14.pagespeed.cf.8GE4XnYdak.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./Results – Michelle Zhu_files/frontend.min.css,qver=2.5.14.pagespeed.ce.f2IAhQcJxx.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-1603-css" href="./Results – Michelle Zhu_files/post-1603.css" type="text/css" media="all">
+<link rel="stylesheet" id="oe-widgets-style-css" href="./Results – Michelle Zhu_files/A.widgets.css,qver=4.9.16.pagespeed.cf.bX_BAF_dOC.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./Results – Michelle Zhu_files/css(2)" type="text/css" media="all">
+<!--n2css--><script type="text/javascript" src="./Results – Michelle Zhu_files/jquery.js,qver=1.12.4.pagespeed.jm.gp20iU5FlU.js"></script>
+<script src="./Results – Michelle Zhu_files/wp-includes,_js,_jquery,_jquery-migrate.min.js,qver==1.4.1+wp-content,_plugins,_responsive-lightbox,_assets,_magnific,_jquery.magnific-popup.min.js,qver==2.0.5+wp-content,_plugins,_responsive-lightbox,_assets,_infinitescroll,_infinite-scroll.pkgd.min.j.js"></script><script>eval(mod_pagespeed_mUhmJEi5Tr);</script>
+<script>eval(mod_pagespeed_vghKAQJFB1);</script>
+<script>eval(mod_pagespeed_mNZykWI3vb);</script>
+<script type="text/javascript">//<![CDATA[
+var rlArgs={"script":"magnific","selector":"lightbox","customEvents":"","activeGalleries":"0","disableOn":"768","midClick":"1","preloader":"1","closeOnContentClick":"1","closeOnBgClick":"1","closeBtnInside":"1","showCloseBtn":"1","enableEscapeKey":"1","alignTop":"","fixedContentPos":"auto","fixedBgPos":"auto","autoFocusLast":"1","woocommerce_gallery":"0","ajaxurl":"http:\/\/www.michellezhu.co\/wp-admin\/admin-ajax.php","nonce":"99deaf54f5"};
+//]]></script>
+<script src="./Results – Michelle Zhu_files/wp-content,_plugins,_responsive-lightbox,_js,_front.js,qver==2.0.5+wp-content,_plugins,_ocean-extra,_,_includes,_widgets,_js,_mailchimp.min.js,qver==4.9.16+wp-content,_plugins,_ocean-extra,_,_includes,_widgets,_js,_share.min.js,qver==4.9.16+wp-includes.js"></script><script>eval(mod_pagespeed_7C_Ybf0FP2);</script>
+<script>eval(mod_pagespeed_X$3J35Wnl9);</script>
+<script>eval(mod_pagespeed_21fwhyy0vl);</script>
+<link rel="https://api.w.org/" href="http://www.michellezhu.co/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.michellezhu.co/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.michellezhu.co/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.16">
+<link rel="canonical" href="http://www.michellezhu.co/urban-ecology-results/">
+<link rel="shortlink" href="http://www.michellezhu.co/?p=1603">
+<link rel="alternate" type="application/json+oembed" href="http://www.michellezhu.co/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.michellezhu.co%2Furban-ecology-results%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.michellezhu.co/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.michellezhu.co%2Furban-ecology-results%2F&amp;format=xml">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACVklEQVRYhe2SW0gUYRiGn3+dhNyY1iU2DaFQ6cIbhQ4blp0QKZK6KyIoDUKSCMKErECkvEqT0OhkkJKHLqSwEF2WogOhECUZS8ZSBBHLBB7W9qZsvi484A677t6EEPNezf/Nw8sz3/xgx46dJY4CmPbrF4FNAEcq3zMx6ZkHbjZsC2dlBgsDo95V97rPjwVGN6cKrAC+KegTuOIznMZvv54FVAN7gl/yM9oe1ITfjexABB0wgKdAk89wflwooM1oKC9QGsswxfGHR30V3O2sRcSho2atIQ/IQ+Ro5+kL9dBcp5Ry9fYf5879OkxT02eqAdCBXETKSjyRcp/h7JzrdyRa0fCHIlo7ahGJjSqlPL39J65N/XS7Xg6Wcqv9MqapxS5TKhVoK/FEtkRvYJF0PTyT0HN80kNHz1leDZUyv584UUppItIIbCVhMzA2nomIfNpY4K9qbykwWpu8HDtUj6b9iuKe+Mpn7o7IhNsVqr7dWDjc3lJA1clTuFYaVonCEk8kNykBETEUqqh+YP9Vd3pob+bqr9MHD7RQWVZj/TYQMQX2dY1mN6zJ+LzLnR76vruoh0vnDuNwTFurtycloKB5wEgzAJYVh9+K4AMo3tmNS/8RLQv9PsP5epadAG4AZK8NsCH/mbU3J7kNwAvL6A1AisMkZ92IFX8eiwVYnz0c3atwJSUAhBYelGJy7jktbWpRFgjPs8uj2bmrmvgXKGVaJovBZvx3scfJbOCfxhawBWyBJRfQAETkulLqcRzGsJz9QEVsVAYtg2A8VoRA0pZ27PzX+QtKAMPzExriiAAAAABJRU5ErkJggg==" sizes="32x32">
+<link rel="icon" href="http://www.michellezhu.co/wp-content/uploads/2018/07/xcropped-micon3-03-192x192.png.pagespeed.ic.g6ZtXOBTeI.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://www.michellezhu.co/wp-content/uploads/2018/07/xcropped-micon3-03-180x180.png.pagespeed.ic.sSZ8mIzST-.png">
+<meta name="msapplication-TileImage" content="http://www.michellezhu.co/wp-content/uploads/2018/07/cropped-micon3-03-270x270.png">
+		<style type="text/css" id="wp-custom-css">@font-face{font-family:"gill-sans";src:url(‘https://dl.dropboxusercontent.com/s/nv92ix2d8rt4u43/GillSansMTPro-Book.otf)}::selection{background:#f3f3f3;color:inherit}#site-logo a.site-logo-text{font-weight:400}#site-navigation{margin-top:5px}</style>
+	<!-- OceanWP CSS -->
+<style type="text/css">a:hover,a.light:hover,.theme-heading .text::before,#top-bar-content>a:hover,#top-bar-social li.oceanwp-email a:hover,#site-navigation-wrap .dropdown-menu>li>a:hover,#site-header.medium-header #medium-searchform button:hover,.oceanwp-mobile-menu-icon a:hover,.blog-entry.post .blog-entry-header .entry-title a:hover,.blog-entry.post .blog-entry-readmore a:hover,.blog-entry.thumbnail-entry .blog-entry-category a,ul.meta li a:hover,.dropcap,.single nav.post-navigation .nav-links .title,body .related-post-title a:hover,body #wp-calendar caption,body .contact-info-widget.default i,body .contact-info-widget.big-icons i,body .custom-links-widget .oceanwp-custom-links li a:hover,body .custom-links-widget .oceanwp-custom-links li a:hover:before,body .posts-thumbnails-widget li a:hover,body .social-widget li.oceanwp-email a:hover,.comment-author .comment-meta .comment-reply-link,#respond #cancel-comment-reply-link:hover,#footer-widgets .footer-box a:hover,#footer-bottom a:hover,#footer-bottom #footer-bottom-menu a:hover,.sidr a:hover,.sidr-class-dropdown-toggle:hover,.sidr-class-menu-item-has-children.active>a,.sidr-class-menu-item-has-children.active>a>.sidr-class-dropdown-toggle,input[type="checkbox"]:checked:before{color:#999}input[type="button"],input[type="reset"],input[type="submit"],button[type="submit"],.button,#site-navigation-wrap .dropdown-menu>li.btn>a>span,.thumbnail:hover i,.post-quote-content,.omw-modal .omw-close-modal,body .contact-info-widget.big-icons li:hover i{background-color:#999}.widget-title{border-color:#999}blockquote{border-color:#999}#searchform-dropdown{border-color:#999}.dropdown-menu .sub-menu{border-color:#999}.blog-entry.large-entry .blog-entry-readmore a:hover{border-color:#999}.oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#999}.social-widget li.oceanwp-email a:hover{border-color:#999}#respond #cancel-comment-reply-link:hover{border-color:#999}body .contact-info-widget.big-icons li:hover i{border-color:#999}#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#999}input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,button[type="submit"]:hover,input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,button[type="submit"]:focus,.button:hover,#site-navigation-wrap .dropdown-menu>li.btn>a:hover>span,.post-quote-author,.omw-modal .omw-close-modal:hover{background-color:#fcbd0f}a{color:#4717f6}a:hover{color:#9e86f4}.boxed-layout #wrap,.boxed-layout .parallax-footer,.boxed-layout .owp-floating-bar{width:1180px}.boxed-layout{background-color:#fff}@media only screen and (min-width:960px){.content-area,.content-left-sidebar .content-area{width:100%}}.page-header .page-header-title,.page-header.background-image-page-header .page-header-title{color:#000}#scroll-top{border-radius:64px}#top-bar{padding:8px 0 25px 0}#top-bar-wrap{border-color:#fff}#top-bar-wrap,#top-bar-content strong{color:#cecece}#site-header{border-color:#fff}#site-header.has-header-media .overlay-header-media{background-color:rgba(0,0,0,.5)}#site-logo #site-logo-inner a img,#site-header.center-header #site-navigation-wrap .middle-site-logo a img{max-width:100px}#site-logo a.site-logo-text{color:#000}#site-logo a.site-logo-text:hover{color:#4717f6}.effect-one #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-three #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-five #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:before,.effect-five #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-nine #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:before,.effect-nine #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after{background-color:#4717f6}.effect-four #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:before,.effect-four #site-navigation-wrap .dropdown-menu>li>a.menu-link>span:after,.effect-seven #site-navigation-wrap .dropdown-menu>li>a.menu-link:hover>span:after,.effect-seven #site-navigation-wrap .dropdown-menu>li.sfHover>a.menu-link>span:after{color:#4717f6}.effect-seven #site-navigation-wrap .dropdown-menu>li>a.menu-link:hover>span:after,.effect-seven #site-navigation-wrap .dropdown-menu>li.sfHover>a.menu-link>span:after{text-shadow:10px 0 #4717f6,-10px 0 #4717f6}#site-navigation-wrap .dropdown-menu>li>a{padding:0 20px}#site-navigation-wrap .dropdown-menu>li>a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close{color:#000}#site-navigation-wrap .dropdown-menu>li>a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover{color:#4717f6}#site-navigation-wrap .dropdown-menu>.current-menu-item>a,#site-navigation-wrap .dropdown-menu>.current-menu-ancestor>a,#site-navigation-wrap .dropdown-menu>.current-menu-item>a:hover,#site-navigation-wrap .dropdown-menu>.current-menu-ancestor>a:hover{color:#4717f6}.dropdown-menu ul li a.menu-link{color:#000}.dropdown-menu ul li a.menu-link:hover{color:#4717f6}.dropdown-menu ul>.current-menu-item>a.menu-link{color:#4717f6}.navigation li.mega-cat ul li .mega-post-title a{color:#000}.navigation li.mega-cat ul li .mega-post-title a:hover{color:#4717f6}.mobile-menu .hamburger-inner,.mobile-menu .hamburger-inner::before,.mobile-menu .hamburger-inner::after{background-color:#000}#mobile-fullscreen{background-color:#fff}body .sidr a,body .sidr-class-dropdown-toggle,#mobile-dropdown ul li a,#mobile-dropdown ul li a .dropdown-toggle,#mobile-fullscreen ul li a,#mobile-fullscreen .oceanwp-social-menu.simple-social ul li a{color:#000}#mobile-fullscreen a.close .close-icon-inner,#mobile-fullscreen a.close .close-icon-inner::after{background-color:#000}body .sidr a:hover,body .sidr-class-dropdown-toggle:hover,body .sidr-class-dropdown-toggle .fa,body .sidr-class-menu-item-has-children.active>a,body .sidr-class-menu-item-has-children.active>a>.sidr-class-dropdown-toggle,#mobile-dropdown ul li a:hover,#mobile-dropdown ul li a .dropdown-toggle:hover,#mobile-dropdown .menu-item-has-children.active>a,#mobile-dropdown .menu-item-has-children.active>a>.dropdown-toggle,#mobile-fullscreen ul li a:hover,#mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover{color:#4717f6}#mobile-fullscreen a.close:hover .close-icon-inner,#mobile-fullscreen a.close:hover .close-icon-inner::after{background-color:#4717f6}.sidr-class-mobile-searchform button,#mobile-dropdown #mobile-menu-search form button{color:#000}.sidr-class-mobile-searchform button:hover,#mobile-dropdown #mobile-menu-search form button:hover{color:#4717f6}#footer-widgets{background-color:#fff}#footer-bottom{background-color:#fff}#footer-bottom,#footer-bottom p{color:#000}body{font-family:Libre\ Franklin;font-weight:400;font-size:16px;color:#000;letter-spacing:.5px}h1,h2,h3,h4,h5,h6,.theme-heading,.widget-title,.oceanwp-widget-recent-posts-title,.comment-reply-title,.entry-title,.sidebar-box .widget-title{font-family:Poppins;font-weight:700;color:#000;letter-spacing:2.5px;text-transform:uppercase}@media (max-width:480px){h1,h2,h3,h4,h5,h6,.theme-heading,.widget-title,.oceanwp-widget-recent-posts-title,.comment-reply-title,.entry-title,.sidebar-box .widget-title{line-height:1.4;letter-spacing:2.5px}}#site-logo a.site-logo-text{font-family:Poppins;font-weight:600;font-size:36px;letter-spacing:5px;text-transform:uppercase}@media (max-width:480px){#site-logo a.site-logo-text{font-size:26px}}#site-navigation-wrap .dropdown-menu>li>a,#site-header.full_screen-header .fs-dropdown-menu>li>a,#site-header.top-header #site-navigation-wrap .dropdown-menu>li>a,#site-header.center-header #site-navigation-wrap .dropdown-menu>li>a,#site-header.medium-header #site-navigation-wrap .dropdown-menu>li>a,.oceanwp-mobile-menu-icon a{font-family:Poppins;font-weight:600;font-size:18px;letter-spacing:2px;text-transform:uppercase}.sidr-class-dropdown-menu li a,a.sidr-class-toggle-sidr-close,#mobile-dropdown ul li a,body #mobile-fullscreen ul li a{font-family:Poppins;text-transform:uppercase}@media (max-width:768px){.sidr-class-dropdown-menu li a,a.sidr-class-toggle-sidr-close,#mobile-dropdown ul li a,body #mobile-fullscreen ul li a{letter-spacing:3.9px}}.page-header .page-header-title,.page-header.background-image-page-header .page-header-title{font-family:Poppins;font-weight:400;letter-spacing:4px}.blog-entry.post .blog-entry-header .entry-title a{font-weight:600;color:#000;letter-spacing:2px}#footer-bottom #copyright{font-family:Poppins;font-weight:500;font-size:14px;letter-spacing:3.3px;text-transform:uppercase}</style>	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><link href="chrome-extension://cjdnfmjmdligcpfcekfmenlhiopehjkd/web_resources/modal/modal.css" rel="stylesheet" id="__tmpStyle"></head>
+<body class="page-template page-template-elementor_canvas page page-id-1603 wp-custom-logo no-lightbox no-carousel oceanwp-theme fullscreen-mobile boxed-layout default-breakpoint content-full-width content-max-width has-topbar page-header-disabled has-blog-grid elementor-default elementor-template-canvas elementor-page elementor-page-1603" data-elementor-device-mode="desktop" style="">
+			<div data-elementor-type="post" data-elementor-id="1603" class="elementor elementor-1603" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-2cddb070 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2cddb070" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4828abf4 elementor-column elementor-col-100 elementor-top-column" data-id="4828abf4" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-69706cd5 elementor-widget elementor-widget-spacer" data-id="69706cd5" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<section class="elementor-element elementor-element-1cc554f9 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="1cc554f9" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-782ac9d elementor-column elementor-col-25 elementor-inner-column" data-id="782ac9d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-29b2a753 elementor-widget elementor-widget-heading" data-id="29b2a753" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/nature-reserves-in-singapore/">HOME</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-44717872 elementor-column elementor-col-25 elementor-inner-column" data-id="44717872" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-29318f7c elementor-widget elementor-widget-heading" data-id="29318f7c" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/urban-ecology-introduction/">INTRODUCTION</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-6464b4b3 elementor-column elementor-col-25 elementor-inner-column" data-id="6464b4b3" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3904aad7 elementor-widget elementor-widget-heading" data-id="3904aad7" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/urban-ecology-methods/">METHODS</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-1e507a8b elementor-column elementor-col-25 elementor-inner-column" data-id="1e507a8b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-433df290 elementor-widget elementor-widget-heading" data-id="433df290" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/urban-ecology-results/">NATURE RESERVES</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-411f551d elementor-widget elementor-widget-spacer" data-id="411f551d" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-14dced29 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="14dced29" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-185af0ca elementor-column elementor-col-100 elementor-top-column" data-id="185af0ca" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-76e36199 elementor-widget elementor-widget-spacer" data-id="76e36199" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-603ba0db elementor-widget elementor-widget-heading" data-id="603ba0db" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">NATURE RESERVES</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-636929db elementor-widget elementor-widget-spacer" data-id="636929db" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-8bea4e4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="8bea4e4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f5108a6 elementor-column elementor-col-100 elementor-top-column" data-id="f5108a6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-background-overlay"></div>
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0b83823 elementor-widget elementor-widget-heading" data-id="0b83823" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/all-nature-reserves/">OVERALL</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-fc70835 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="fc70835" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-ed39d85 elementor-column elementor-col-50 elementor-top-column" data-id="ed39d85" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-background-overlay"></div>
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ba73002 elementor-widget elementor-widget-heading" data-id="ba73002" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/btnr/">BUKIT TIMAH NATURE RESERVE</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-fafb015 elementor-column elementor-col-50 elementor-top-column" data-id="fafb015" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-background-overlay"></div>
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-207950c elementor-widget elementor-widget-heading" data-id="207950c" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/lnr/">Labrador Nature Reserve</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-a3ace78 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="a3ace78" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-fff262a elementor-column elementor-col-50 elementor-top-column" data-id="fff262a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-background-overlay"></div>
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-479b57b elementor-widget elementor-widget-heading" data-id="479b57b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/ccnr/">Central Catchment Nature Reserve</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-f2070d8 elementor-column elementor-col-50 elementor-top-column" data-id="f2070d8" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-background-overlay"></div>
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5c62fe3 elementor-widget elementor-widget-heading" data-id="5c62fe3" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/sbwr/">Sungei Buloh Wetland Reserve</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-550ac39 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="550ac39" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f4e75ae elementor-column elementor-col-100 elementor-top-column" data-id="f4e75ae" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-background-overlay"></div>
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b221b42 elementor-widget elementor-widget-heading" data-id="b221b42" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="http://www.michellezhu.co/wp-content/uploads/2020/04/LSM4265-Valuation-of-Nature-Reserves-in-SG-Report-13-Apr.pdf" target="_blank">Download our full report (PDF)</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		<script>eval(mod_pagespeed_Che1xByOQs);</script>
+<script type="text/javascript">//<![CDATA[
+var oceanwpLocalize={"isRTL":"","menuSearchStyle":"disabled","sidrSource":null,"sidrDisplace":"","sidrSide":"left","sidrDropdownTarget":"link","verticalHeaderTarget":"icon","customSelects":".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select","ajax_url":"http:\/\/www.michellezhu.co\/wp-admin\/admin-ajax.php","stickElements":""};
+//]]></script>
+<script type="text/javascript" src="./Results – Michelle Zhu_files/main-scripts.js,qver=1.5.20.pagespeed.jm.wwFbay6JGl.js"></script>
+<script src="./Results – Michelle Zhu_files/wp-content,_plugins,_ocean-stick-anything,_assets,_js,_sticky-kit.min.js,qver==1.0.2+wp-content,_plugins,_ocean-stick-anything,_assets,_js,_main.min.js,qver==1.0.2+wp-includes,_js,_wp-embed.min.js,qver==4.9.16.pagespeed.jc.iZ5Kjflug0.js"></script><script>eval(mod_pagespeed_n0uLN7369D);</script>
+<script>eval(mod_pagespeed_Refis8hT10);</script>
+<script>eval(mod_pagespeed_ZxuariynXm);</script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.michellezhu.co/wp-content/themes/oceanwp/assets/js//third/html5.min.js?ver=1.5.20'></script>
+<![endif]-->
+<script src="./Results – Michelle Zhu_files/wp-content,_plugins,_elementor,_assets,_js,_frontend-modules.min.js,qver==2.5.14+wp-includes,_js,_jquery,_ui,_position.min.js,qver==1.11.4+wp-content,_plugins,_elementor,_assets,_lib,_dialog,_dialog.min.js,qver==4.7.1+wp-content,_plugins,_elementor,_as.js"></script><script>eval(mod_pagespeed_zOzQyB2Yve);</script>
+<script>eval(mod_pagespeed_BaeQKFX3LB);</script>
+<script>eval(mod_pagespeed_aNpbSAmXvf);</script>
+<script>eval(mod_pagespeed_BELEYttzmd);</script>
+<script type="text/javascript" src="./Results – Michelle Zhu_files/swiper.min.js,qver=4.4.6.pagespeed.jm.b6eRSjZRcI.js"></script>
+<script type="text/javascript">var elementorFrontendConfig={"environmentMode":{"edit":false,"wpPreview":false},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.5.14","urls":{"assets":"http:\/\/www.michellezhu.co\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_enable_lightbox_in_editor":"yes"}},"post":{"id":1603,"title":"Results","excerpt":""}};</script>
+<script type="text/javascript" src="./Results – Michelle Zhu_files/frontend.min.js,qver=2.5.14.pagespeed.jm.CXF08DUeDh.js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+	
+
+<div>
+    <div id="twoseven-ext-tab-media-modal" class="twoseven-ext-tab-media-modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="twoseven-ext-tab-media-modal-content">
+        <div class="iframe-container" style="height: 100%; width: 100%;">
+          <span class="close">×</span>
+        </div>
+      </div>
+    </div></div></body></html>

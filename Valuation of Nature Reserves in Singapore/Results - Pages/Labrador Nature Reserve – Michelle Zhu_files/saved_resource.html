@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://voyant-tools.org/tool/Cirrus/?corpus=11ae41881599a68e57e976f8927ceb4b -->
+<html class="x-viewport" id="ext-element-4"><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;"><script type="text/javascript" id="__tmpScript-763538341" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-184764440" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-182676048" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-998566984" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-383270585" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-504701389" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-990721716" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-811892354" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-363501839" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-954103517" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-604227447" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-896179979" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-880106284" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-538630670" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-472475536" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-807889848" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-956046969" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-149566663" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-985323932" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-417855913" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-165504304" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-976837721" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-769219050" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-933856108" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-319055614" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-580011268" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-551336918" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-831371403" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-771558834" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-846601818" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-675002896" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-704357117" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-700989922" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-998996254" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-418083090" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-515929587" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-423095287" data-added-by-two-seven="1">(function() {
+        
+    const roomInfo = {
+      roomOwner: undefined,
+      roomType: undefined,
+      roomController: undefined,
+      roomProperties: undefined
+    }
+    window.twoseven.roomInfo = roomInfo
+
+    window.addEventListener('message', ({ data = {} }) => {
+      const { action } = data
+      if (action !== 'room-updated') {
+        return
+      }
+      const { data: { key, value } } = data
+      roomInfo[key] = value
+    })
+  ;
+      })();</script></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>Voyant Tools - Cirrus</title>
+
+<link rel="shortcut icon" type="image/ico" href="https://voyant-tools.org/resources/voyant/favicon.ico">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./js"></script>
+<script>
+	var isLocalHost = window.location.hostname=='localhost' || window.location.hostname=='127.0.0.1';
+	if (isLocalHost) {
+		window['ga-disable-G-MZ8WDV5DGZ'] = true;
+	}
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-MZ8WDV5DGZ');
+</script>
+
+<!-- EXTJS CLASSIC -->
+<link rel="stylesheet" type="text/css" href="./charts-all.css">
+<link rel="stylesheet" type="text/css" href="./theme-crisp-all_1.css">
+<link rel="stylesheet" type="text/css" href="./theme-crisp-all_2.css">
+<link rel="stylesheet" type="text/css" href="./ux-all-debug.css">
+<link rel="stylesheet" type="text/css" href="./style.css">
+
+<!-- jQuery -->
+<link rel="stylesheet" type="text/css" href="./jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="./jquery-ui.theme.min.css">
+
+<!-- vis.js -->
+<link rel="stylesheet" type="text/css" href="./vis.min.css">
+
+<!-- FontAwesome -->
+<link rel="stylesheet" type="text/css" href="./font-awesome-all.css">
+
+<!-- spectrum -->
+<link rel="stylesheet" type="text/css" href="./spectrum.css">
+
+<link rel="stylesheet" type="text/css" href="./styles.css">
+
+
+
+
+
+
+
+
+<style>
+body {margin: 0; padding: 0;}
+#pageloading {position:absolute;top:50%;width:100%;margin-top:-70px}
+#pageloading .title{font-family:helvetica,arial,verdana,sans-serif;font-size:2em;color:gray;text-align:center;white-space:nowrap;display:block}
+#pageloading .logo{height:110px;text-align:center}
+#pageloading .logo img {
+    width: 90px;
+    height: 90px;
+	margin-top: 20px;
+    -webkit-animation: spin 2.5s linear infinite;
+    -moz-animation: spin 2.5s linear infinite;
+    animation: spin 2.5s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+</style>
+</head>
+<body id="ext-element-1" class="x-body x-webkit x-chrome x-mac x-desktop x-border-layout-ct x-border-box x-scroller x-container x-container-default" data-componentid="viewport-1009" role="application" style="overflow: hidden;"><div class="x-container x-tab-bar-default voyant-footer x-border-item x-box-item x-container-default" style="height: 18px; right: auto; left: 0px; top: 332px; margin: 0px; width: 386px;" role="presentation" id="voyantfooter-1010"><div id="voyantfooter-1010-outerCt" data-ref="outerCt" class="x-autocontainer-outerCt" role="presentation" style="width: 100%; table-layout: fixed; height: 100%;"><div id="voyantfooter-1010-innerCt" data-ref="innerCt" style="" role="presentation" class="x-autocontainer-innerCt"><a href="https://voyant-tools.org/docs/" target="voyantdocs">Voyant Tools</a> , <a href="https://csdh-schn.org/stefan-sinclair-in-memoriam/">Stéfan Sinclair</a> &amp; <a href="https://geoffreyrockwell.com/">Geoffrey Rockwell</a> (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><span class="cc">c</span></a> 2021) <a class="privacy" href="https://voyant-tools.org/docs/#!/guide/about-section-privacy-statement" target="top" id="ext-element-71">Privacy</a> v. 2.5.0</div></div></div><div class="x-panel x-border-item x-box-item x-panel-default" role="region" aria-hidden="false" aria-disabled="false" id="panel-1011" style="right: auto; left: 0px; top: 0px; margin: 0px; height: 332px; width: 386px;"><div id="panel-1011-bodyWrap" data-ref="bodyWrap" class="x-panel-bodyWrap" role="presentation"><div id="panel-1011-body" data-ref="body" class="x-panel-body x-panel-body-default x-panel-body-default x-noborder-trbl" role="presentation" style="width: 386px; height: 332px; left: 0px; top: 0px;"><div class="x-panel x-fit-item x-panel-default" role="presentation" id="cirrus-1012" style="margin: 0px; width: 386px; height: 332px;"><div class="x-panel-header x-header x-header-noborder x-docked x-unselectable x-panel-header-default x-horizontal x-panel-header-horizontal x-panel-header-default-horizontal x-top x-panel-header-top x-panel-header-default-top x-docked-top x-panel-header-docked-top x-panel-header-default-docked-top x-box-layout-ct x-noborder-trl" role="toolbar" aria-hidden="false" aria-disabled="false" id="cirrus-1012_header" style="right: auto; left: 0px; top: 0px; width: 386px;"><span id="cirrus-1012_header-tabGuardBeforeEl" data-ref="tabGuardBeforeEl" aria-hidden="true" class="x-tab-guard x-tab-guard-" style="width:0px;height:0px;" tabindex="0"></span><div id="cirrus-1012_header-innerCt" data-ref="innerCt" role="presentation" class="x-box-inner" style="width: 366px; height: 16px;"><div id="cirrus-1012_header-targetEl" data-ref="targetEl" class="x-box-target" role="presentation" style="width: 366px;"><div class="x-title x-panel-header-title x-panel-header-title-default x-box-item x-title-default x-title-rotate-none x-title-align-left" role="presentation" unselectable="on" id="cirrus-1012_header-title" style="right: auto; left: 0px; top: 0px; margin: 0px; width: 343px;"><div id="cirrus-1012_header-title-iconWrapEl" data-ref="iconWrapEl" role="presentation" class="x-title-icon-wrap x-title-icon-wrap-default x-title-icon-left x-title-item"><div id="cirrus-1012_header-title-iconEl" data-ref="iconEl" role="presentation" unselectable="on" class="x-title-icon x-title-icon-default  x-title-glyph" style="font-family:FontAwesome;"></div></div><div id="cirrus-1012_header-title-textEl" data-ref="textEl" class="x-title-text x-title-text-default x-title-item" unselectable="on" role="presentation">Cirrus</div></div><div class="x-tool x-box-item x-tool-default x-tool-after-title" role="button" aria-hidden="true" aria-disabled="false" id="toolmenu-1026" data-qtip="Export a URL, an embeddable tool, data or a bibliographic reference." aria-label="Export a URL, an embeddable tool, data or a bibliographic reference." tabindex="-1" data-componentid="toolmenu-1026" style="display: none;"><div class="x-menu-tool-hover"></div><span id="toolmenu-1026-toolEl" class="x-tool-glyph " role="presentation" style="font-family: FontAwesome; "></span></div><div class="x-tool x-box-item x-tool-default x-tool-after-title" role="button" aria-hidden="true" aria-disabled="false" id="toolmenu-1027" data-qtip="Click to choose another tool for this panel location (this will replace the current tool)." aria-label="Click to choose another tool for this panel location (this will replace the current tool)." tabindex="-1" data-componentid="toolmenu-1027" style="display: none;"><div class="x-menu-tool-hover"></div><span id="toolmenu-1027-toolEl" class="x-tool-glyph " role="presentation" style="font-family: FontAwesome; "></span></div><div class="x-tool x-box-item x-tool-default x-tool-after-title" role="button" aria-hidden="true" aria-disabled="false" id="toolmenu-1028" data-qtip="Define options for this tool." aria-label="Define options for this tool." tabindex="-1" data-componentid="toolmenu-1028" style="display: none;"><div class="x-menu-tool-hover"></div><span id="toolmenu-1028-toolEl" class="x-tool-glyph " role="presentation" style="font-family: FontAwesome; "></span></div><div class="x-tool x-box-item x-tool-default x-tool-after-title" role="button" aria-hidden="false" aria-disabled="false" id="toolmenu-1029" data-qtip="&lt;/p&gt;&lt;p&gt;Cirrus provides a wordcloud view of the most frequently occurring words in the corpus or document –&amp;nbsp;this provides a convenient (though reductive) overview of the content. Features include&lt;/p&gt;&lt;ul&gt;&lt;li&gt;term frequency appears when hovering over words&lt;/li&gt;&lt;li&gt;clicking on terms may produce results in other tools if any are displayed&lt;/li&gt;&lt;/ul&gt;" aria-label="&lt;/p&gt;&lt;p&gt;Cirrus provides a wordcloud view of the most frequently occurring words in the corpus or document –&amp;nbsp;this provides a convenient (though reductive) overview of the content. Features include&lt;/p&gt;&lt;ul&gt;&lt;li&gt;term frequency appears when hovering over words&lt;/li&gt;&lt;li&gt;clicking on terms may produce results in other tools if any are displayed&lt;/li&gt;&lt;/ul&gt;" tabindex="-1" data-componentid="toolmenu-1029" style="right: auto; left: 349px; top: 0px; margin: 0px;"><div class="x-menu-tool-hover"></div><span id="toolmenu-1029-toolEl" class="x-tool-glyph " role="presentation" style="font-family: FontAwesome; "></span></div></div></div><span id="cirrus-1012_header-tabGuardAfterEl" data-ref="tabGuardAfterEl" aria-hidden="true" class="x-tab-guard x-tab-guard-" style="width:0px;height:0px;" tabindex="0"></span></div><div id="cirrus-1012-bodyWrap" data-ref="bodyWrap" class="x-panel-bodyWrap" role="presentation"><div id="cirrus-1012-body" data-ref="body" class="x-panel-body x-panel-body-default x-panel-body-default x-noborder-trbl" role="presentation" style="width: 386px; height: 260px; left: 0px; top: 36px;"><svg id="cirrus_60" class="cirrusGraph" width="386" height="260"><g transform="translate(193,130)"><text text-anchor="middle" data-freq="10" transform="translate(-2,6)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(0, 0, 255); font-size: 1px;">nature</text><text text-anchor="middle" data-freq="5" transform="translate(-68,2)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(51, 197, 51); font-size: 1px;">home</text><text text-anchor="middle" data-freq="5" transform="translate(-96,53)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(255, 0, 255); font-size: 1px;">time</text><text text-anchor="middle" data-freq="5" transform="translate(46,-34)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(121, 51, 255); font-size: 1px;">birding</text><text text-anchor="middle" data-freq="4" transform="translate(-160,-36)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(28, 255, 255); font-size: 1px;">animals</text><text text-anchor="middle" data-freq="4" transform="translate(101,69)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(255, 174, 0); font-size: 1px;">haven’t</text><text text-anchor="middle" data-freq="4" transform="translate(-47,-28)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(30, 177, 255); font-size: 1px;">near</text><text text-anchor="middle" data-freq="3" transform="translate(-51,-86)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(182, 242, 58); font-size: 1px;">come</text><text text-anchor="middle" data-freq="3" transform="translate(-21,-91)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(255, 0, 164); font-size: 1px;">place</text><text text-anchor="middle" data-freq="3" transform="translate(83,-66)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(51, 102, 153); font-size: 1px;">friends</text><text text-anchor="middle" data-freq="3" transform="translate(108,-3)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(34, 111, 52); font-size: 1px;">wildlife</text><text text-anchor="middle" data-freq="2" transform="translate(-28,25)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(155, 20, 104); font-size: 1px;">close</text><text text-anchor="middle" data-freq="2" transform="translate(65,84)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(109, 43, 157); font-size: 1px;">good</text><text text-anchor="middle" data-freq="2" transform="translate(-16,57)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(128, 130, 33); font-size: 1px;">people</text><text text-anchor="middle" data-freq="2" transform="translate(-160,54)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(111, 76, 10); font-size: 1px;">photography</text><text text-anchor="middle" data-freq="2" transform="translate(-40,103)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(119, 115, 165); font-size: 1px;">wanted</text><text text-anchor="middle" data-freq="2" transform="translate(-46,51)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(61, 177, 169); font-size: 1px;">years</text><text text-anchor="middle" data-freq="2" transform="translate(-125,93)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(202, 135, 115); font-size: 1px;">children</text><text text-anchor="middle" data-freq="2" transform="translate(149,-10)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(194, 169, 204); font-size: 1px;">long</text><text text-anchor="middle" data-freq="2" transform="translate(-70,-91)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(181, 212, 228); font-size: 1px;">singapore</text><text text-anchor="middle" data-freq="1" transform="translate(14,48)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(182, 197, 174); font-size: 1px;">ago</text><text text-anchor="middle" data-freq="1" transform="translate(35,-52)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(255, 197, 197); font-size: 1px;">air</text><text text-anchor="middle" data-freq="1" transform="translate(84,12)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(228, 200, 124); font-size: 1px;">appreciate</text><text text-anchor="middle" data-freq="1" transform="translate(106,85)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(197, 179, 159); font-size: 1px;">break</text><text text-anchor="middle" data-freq="1" transform="translate(-38,73)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(0, 0, 255); font-size: 1px;">busy</text><text text-anchor="middle" data-freq="1" transform="translate(-119,22)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(51, 197, 51); font-size: 1px;">came</text><text text-anchor="middle" data-freq="1" transform="translate(-37,38)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(255, 0, 255); font-size: 1px;">chill</text><text text-anchor="middle" data-freq="1" transform="translate(-87,-79)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(121, 51, 255); font-size: 1px;">coastal</text><text text-anchor="middle" data-freq="1" transform="translate(-95,-31)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(28, 255, 255); font-size: 1px;">cos</text><text text-anchor="middle" data-freq="1" transform="translate(136,20)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(255, 174, 0); font-size: 1px;">decision</text><text text-anchor="middle" data-freq="1" transform="translate(77,98)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(30, 177, 255); font-size: 1px;">different</text><text text-anchor="middle" data-freq="1" transform="translate(-115,-45)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(182, 242, 58); font-size: 1px;">explore</text><text text-anchor="middle" data-freq="1" transform="translate(30,-111)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(255, 0, 164); font-size: 1px;">exploring</text><text text-anchor="middle" data-freq="1" transform="translate(-55,69)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(51, 102, 153); font-size: 1px;">far</text><text text-anchor="middle" data-freq="1" transform="translate(-197,-20)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(34, 111, 52); font-size: 1px;">favourite</text><text text-anchor="middle" data-freq="1" transform="translate(-106,-65)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(155, 20, 104); font-size: 1px;">free</text><text text-anchor="middle" data-freq="1" transform="translate(116,-54)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(109, 43, 157); font-size: 1px;">fresh</text><text text-anchor="middle" data-freq="1" transform="translate(139,-45)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(128, 130, 33); font-size: 1px;">friend’s</text><text text-anchor="middle" data-freq="1" transform="translate(55,109)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(111, 76, 10); font-size: 1px;">green</text><text text-anchor="middle" data-freq="1" transform="translate(-111,-90)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(119, 115, 165); font-size: 1px;">homse</text><text text-anchor="middle" data-freq="1" transform="translate(-104,-103)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(61, 177, 169); font-size: 1px;">hotspot</text><text text-anchor="middle" data-freq="1" transform="translate(-195,33)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(202, 135, 115); font-size: 1px;">interesting</text><text text-anchor="middle" data-freq="1" transform="translate(-109,34)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(194, 169, 204); font-size: 1px;">it's</text><text text-anchor="middle" data-freq="1" transform="translate(-124,34)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(181, 212, 228); font-size: 1px;">it’s</text><text text-anchor="middle" data-freq="1" transform="translate(136,96)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(182, 197, 174); font-size: 1px;">lifestyle</text><text text-anchor="middle" data-freq="1" transform="translate(-176,15)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(255, 197, 197); font-size: 1px;">like</text><text text-anchor="middle" data-freq="1" transform="translate(165,13)rotate(0)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(228, 200, 124); font-size: 1px;">lot</text><text text-anchor="middle" data-freq="1" transform="translate(-138,101)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(197, 179, 159); font-size: 1px;">mangroves</text><text text-anchor="middle" data-freq="1" transform="translate(158,-66)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(0, 0, 255); font-size: 1px;">memories</text><text text-anchor="middle" data-freq="1" transform="translate(111,-88)rotate(90)" style="font-family: &quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif; fill: rgb(51, 197, 51); font-size: 1px;">nearby</text></g></svg></div><div class="x-toolbar x-docked x-toolbar-default x-docked-bottom x-toolbar-docked-bottom x-toolbar-default-docked-bottom x-box-layout-ct x-noborder-rbl" role="group" aria-hidden="false" aria-disabled="false" id="toolbar-1013" style="right: auto; left: 0px; top: 296px; width: 386px;"><span id="toolbar-1013-tabGuardBeforeEl" data-ref="tabGuardBeforeEl" aria-hidden="true" class="x-tab-guard x-tab-guard-" style="width:0px;height:0px;"></span><div role="presentation" id="toolbar-1013-before-scroller" class="x-box-scroller x-box-scroller-left x-box-scroller-toolbar x-box-scroller-toolbar-default x-unselectable" style="display:none"></div><div id="toolbar-1013-innerCt" data-ref="innerCt" role="presentation" class="x-box-inner x-box-scroller-body-horizontal" style="width: 378px; height: 24px;"><div id="toolbar-1013-targetEl" data-ref="targetEl" class="x-box-target" role="presentation" style="width: 378px;"><a class="x-btn x-unselectable x-box-item x-toolbar-item x-btn-default-toolbar-small" hidefocus="on" unselectable="on" role="button" aria-hidden="true" aria-disabled="false" aria-haspopup="true" aria-owns="menu-1015" id="corpusdocumentselector-1014" tabindex="0" data-componentid="corpusdocumentselector-1014" style="right: auto; left: 0px; top: 0px; margin: 0px; display: none;"><span id="corpusdocumentselector-1014-btnWrap" data-ref="btnWrap" role="presentation" unselectable="on" style="" class="x-btn-wrap x-btn-wrap-default-toolbar-small x-btn-arrow x-btn-arrow-right"><span id="corpusdocumentselector-1014-btnEl" data-ref="btnEl" role="presentation" unselectable="on" style="" class="x-btn-button x-btn-button-default-toolbar-small x-btn-text  x-btn-icon x-btn-icon-left x-btn-button-center "><span id="corpusdocumentselector-1014-btnIconEl" data-ref="btnIconEl" role="presentation" unselectable="on" class="x-btn-icon-el x-btn-icon-el-default-toolbar-small  " style=""></span><span id="corpusdocumentselector-1014-btnInnerEl" data-ref="btnInnerEl" unselectable="on" class="x-btn-inner x-btn-inner-default-toolbar-small">Scale</span></span></span></a><div class="x-field x-form-item x-form-item-default x-form-type-text x-box-item x-toolbar-item x-field-default x-hbox-form-item x-form-dirty" style="width: 120px; right: auto; left: 0px; top: 0px; margin: 0px;" role="presentation" id="slider-1024"><label id="slider-1024-labelEl" data-ref="labelEl" class="x-form-item-label x-form-item-label-default   x-unselectable" style="padding-right:5px;width:45px;"><span class="x-form-item-label-inner x-form-item-label-inner-default" style="width:40px"><span id="slider-1024-labelTextEl" data-ref="labelTextEl" class="x-form-item-label-text">Terms:</span></span></label><div id="slider-1024-bodyEl" data-ref="bodyEl" role="presentation" class="x-form-item-body x-form-item-body-default x-field-body x-field-body-default  x-slider-ct-horz"><div id="slider-1024-inputEl" data-ref="inputEl" class="x-slider x-form-field x-slider-horz" tabindex="0" aria-hidden="false" aria-disabled="false" role="slider" aria-invalid="false" aria-readonly="false" aria-describedby="slider-1024-ariaStatusEl" aria-labelledby="slider-1024-labelEl" aria-orientation="horizontal" aria-valuemin="25" aria-valuemax="500" aria-valuenow="55" data-componentid="slider-1024"><div id="slider-1024-endEl" data-ref="endEl" class="x-slider-end" role="presentation"><div id="slider-1024-innerEl" data-ref="innerEl" class="x-slider-inner" role="presentation"><div style="left: 6.31579%;" id="slider-1024-thumb-0" class="x-slider-thumb x-unselectable" role="presentation" data-exttouchaction="14"></div></div></div></div><span id="slider-1024-ariaStatusEl" data-ref="ariaStatusEl" aria-hidden="true" class="x-hidden-offsets"></span><span id="slider-1024-ariaErrorEl" data-ref="ariaErrorEl" aria-hidden="true" aria-live="assertive" class="x-hidden-clip"></span></div></div></div></div><div role="presentation" id="toolbar-1013-after-scroller" class="x-box-scroller x-box-scroller-right x-box-scroller-toolbar x-box-scroller-toolbar-default x-unselectable" style="display:none"></div><span id="toolbar-1013-tabGuardAfterEl" data-ref="tabGuardAfterEl" aria-hidden="true" class="x-tab-guard x-tab-guard-" style="width:0px;height:0px;"></span></div></div></div></div></div></div>
+<div id="pageloading" style="visibility: hidden;"><span class="title">Voyant Tools</span><div class="logo"><img src="./voyant-logo-90.png" width="90" height="90"></div></div>
+
+
+
+<!-- EXTJS CLASSIC -->
+<script type="text/javascript" src="./ext-all.js"></script>
+<script type="text/javascript" src="./charts.js"></script>
+
+<script type="text/javascript" src="./theme-crisp.js"></script>
+<script type="text/javascript" src="./ux.js"></script>
+
+<!-- jQuery -->
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery-ui.min.js"></script>
+
+<!-- D3 -->
+<script type="text/javascript" src="./d3.min.js"></script>
+<script type="text/javascript" src="./fisheye.js"></script>
+<script type="text/javascript" src="./d3.layout.cloud.js"></script>
+
+<!-- vis.js -->
+<script type="text/javascript" src="./vis.min.js"></script>
+
+<!-- spectrum -->
+<script type="text/javascript" src="./spectrum.js"></script>
+
+<!-- spyral -->
+<script type="text/javascript" src="./spyral.js"></script>
+
+<script type="text/javascript" src="./voyant.min.js"></script>
+<script type="text/javascript" src="./voyant-locale-en.js"></script>
+
+<script>
+if (Ext) {
+	Ext.onReady(function () {
+		Ext.get("pageloading").hide();
+	});
+}
+</script>
+	
+<script>
+	Ext.Loader.setConfig({
+		enabled : true,
+		paths : {
+			'Voyant' : '../../app',
+			'resources': '../../resources',
+			'Ext.chart': '../../resources/ext/current/chart'
+		}
+	});
+	Ext.application({
+		extend : 'Voyant.VoyantToolApp',
+//		requires: ['Voyant.panel.VoyantHeader','Voyant.panel.Cirrus','Voyant.panel.VoyantFooter'],
+		name : 'VoyantToolApp',
+		config: {
+			baseUrl: '//voyant-tools.org/',
+			version: '2.5.0',
+			build: 'null',
+			tool: 'cirrus',
+			allowInput: ''
+		},
+		launch: function() {
+			if (document.location.search.length==0) {
+				var url = "../../?view=Cirrus";
+				if (document.location.search) {
+					url+="&"+document.location.search.substring(1)
+				}
+				window.location.replace(url)
+			} else {
+				this.callParent(arguments);
+			}
+		}
+	});
+	
+</script>
+
+
+<div class="x-tip x-layer x-tip-default x-border-box" role="tooltip" aria-hidden="true" aria-disabled="false" aria-labelledby="ext-quicktips-tip_header-title-textEl" id="ext-quicktips-tip" style="display: none;"><div id="ext-quicktips-tip-bodyWrap" data-ref="bodyWrap" class="x-tip-bodyWrap" role="presentation"><div class="x-tip-header x-header x-docked x-unselectable x-tip-header-default x-horizontal x-tip-header-horizontal x-tip-header-default-horizontal x-top x-tip-header-top x-tip-header-default-top x-box-layout-ct" role="presentation" id="ext-quicktips-tip_header"><span id="ext-quicktips-tip_header-tabGuardBeforeEl" data-ref="tabGuardBeforeEl" aria-hidden="true" class="x-tab-guard x-tab-guard-" style="width:0px;height:0px;"></span><div id="ext-quicktips-tip_header-innerCt" data-ref="innerCt" role="presentation" class="x-box-inner"><div id="ext-quicktips-tip_header-targetEl" data-ref="targetEl" class="x-box-target" role="presentation"><div class="x-title x-tip-header-title x-tip-header-title-default x-box-item x-title-default x-title-rotate-none x-title-align-left" role="presentation" unselectable="on" id="ext-quicktips-tip_header-title"><div id="ext-quicktips-tip_header-title-textEl" data-ref="textEl" class="x-title-text x-title-text-default x-title-item" unselectable="on" role="presentation">&nbsp;</div></div></div></div><span id="ext-quicktips-tip_header-tabGuardAfterEl" data-ref="tabGuardAfterEl" aria-hidden="true" class="x-tab-guard x-tab-guard-" style="width:0px;height:0px;"></span></div><div id="ext-quicktips-tip-body" data-ref="body" class="x-tip-body x-tip-body-default x-tip-body-default" role="presentation"><div id="ext-quicktips-tip-outerCt" data-ref="outerCt" class="x-autocontainer-outerCt" role="presentation"><div id="ext-quicktips-tip-innerCt" data-ref="innerCt" style="" role="presentation" class="x-autocontainer-innerCt"></div></div></div></div><div role="presentation" class="x-tip-anchor" id="ext-element-3"></div></div><div role="presentation" class="x-textmetrics" id="ext-element-5" style="font-size: 10px; font-style: normal; font-weight: 300; font-family: helvetica, arial, verdana, sans-serif; line-height: 17px; text-transform: none; letter-spacing: normal; word-break: normal; position: absolute; right: auto; left: -1000px; top: -1000px; visibility: hidden; width: auto;"></div></body></html>
